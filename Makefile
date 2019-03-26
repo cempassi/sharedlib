@@ -6,7 +6,7 @@
 #    By: cempassi <cempassi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/17 23:46:04 by cempassi          #+#    #+#              #
-#    Updated: 2019/03/01 19:59:05 by cempassi         ###   ########.fr        #
+#    Updated: 2019/03/26 21:56:14 by cempassi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,9 @@ BLUE = \033[0;34m
 PURPLE = \033[0;35m
 CYAN = \033[0;36m
 WHITE = \033[0;37m
+
+# One Line Output
+ONELINE =\e[1A\r
 
 NAME = libft.a
 DBNAME = libftdb.a
@@ -209,11 +212,11 @@ $(DBNAME): $(OBJD)
 
 $(OBJS): $(PATHO)%.o : %.c $(INCS)
 	$(COMPILE) $(CFLAGS) $(IFLAGS) $< -o $@
-	printf "$(BLUE)Compiling $<\n$(NC)"
+	printf "$(ONELINE)$(BLUE)Compiling $<                \n$(NC)"
 
 $(OBJD): $(PATHO)db%.o : %.c $(INCS)
 	$(DEBUG) $(DFLAGS) $(CFLAGS) $(IFLAGS) $< -o $@
-	printf "$(BLUE)Compiling $< for debug\n$(NC)"
+	printf "$(ONELINE)$(BLUE)Compiling $< for debug                     \n$(NC)"
 
 $(PATHO) :
 	$(MKDIR) $(PATHO)
