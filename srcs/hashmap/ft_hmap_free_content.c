@@ -6,7 +6,7 @@
 /*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/27 14:31:34 by nrechati          #+#    #+#             */
-/*   Updated: 2019/03/27 18:16:07 by nrechati         ###   ########.fr       */
+/*   Updated: 2019/04/04 13:55:37 by nrechati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	ft_hmap_free_content(t_hash *hashmap, void (*del)(void *))
 	t_hnode	*node;
 
 	i = 0;
+	if (hashmap->used == 0)
+		return ;
 	while (i < hashmap->map_size)
 	{
 		ptr = hashmap->map[i];

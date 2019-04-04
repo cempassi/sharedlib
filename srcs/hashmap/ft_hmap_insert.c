@@ -6,7 +6,7 @@
 /*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/26 12:07:05 by nrechati          #+#    #+#             */
-/*   Updated: 2019/03/28 15:56:26 by nrechati         ###   ########.fr       */
+/*   Updated: 2019/04/04 13:46:07 by nrechati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,7 @@ int				ft_hmap_insert(t_hash *hashmap, char *key, void *data)
 	uint32_t hash;
 
 	if (ft_hmap_getdata(hashmap, key))
-	{
 		return (0);
-	}
 	if (ft_hmap_filled(hashmap) > MAX_FILL)
 	{
 		if (!ft_hmap_resize(hashmap, hashmap->map_size << 1))
