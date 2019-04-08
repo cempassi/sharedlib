@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cempassi <cempassi@student.42.fr>          +#+  +:+       +#+         #
+#    By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/17 23:46:04 by cempassi          #+#    #+#              #
-#    Updated: 2019/04/02 16:56:15 by skuppers         ###   ########.fr        #
+#    Updated: 2019/04/03 15:53:24 by nrechati         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -169,15 +169,15 @@ SRCS += doubles.c
 SRCS += other.c
 
 #--------------------Hashmap-------------------#
-SRC += ft_hash_str.c
-SRC += ft_hmap_getdata.c
-SRC += ft_hmap_init.c
-SRC += ft_hmap_insert.c
-SRC += ft_hmap_print.c
-SRC += ft_hmap_remove.c
-SRC += ft_hmap_resize.c
-SRC += ft_hmap_free_content.c
-SRC += ft_hmap_collision.c
+SRCS += ft_hash_str.c
+SRCS += ft_hmap_getdata.c
+SRCS += ft_hmap_init.c
+SRCS += ft_hmap_insert.c
+SRCS += ft_hmap_print.c
+SRCS += ft_hmap_remove.c
+SRCS += ft_hmap_resize.c
+SRCS += ft_hmap_free_content.c
+SRCS += ft_hmap_collision.c
 
 #--------------------test------------------------#
 SRCS += test.c

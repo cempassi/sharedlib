@@ -6,7 +6,7 @@
 /*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/26 12:03:12 by nrechati          #+#    #+#             */
-/*   Updated: 2019/03/28 15:56:03 by nrechati         ###   ########.fr       */
+/*   Updated: 2019/04/04 13:48:53 by nrechati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,29 @@ static void		print_map_info(t_hash *hashmap)
 		ft_printf("\n\x1b[32mMap size : %zu ", hashmap->map_size);
 		ft_printf(" ||  . . . Printing . . .  || ");
 		ft_printf(" Filled at %zu%%\x1b[0m\n\n", fill);
+	}
+}
+
+void			ft_print_hashmap_p(t_hash *hashmap)
+{
+	size_t i;
+	t_list *ptr;
+
+	i = -1;
+	print_map_info(hashmap);
+	while (++i < hashmap->map_size)
+	{
+		if (hashmap->map[i] != NULL)
+		{
+			ft_printf("| %zu | :", i);
+			ptr = hashmap->map[i];
+			while (ptr != NULL)
+			{
+				ft_printf(" | Key = %s -> Data = %p | -", ((t_hnode *)ptr->data)->key, ((t_hnode *)ptr->data)->data);
+				ptr = ptr->next;
+			}
+			ft_printf(" NULL\n");
+		}
 	}
 }
 
