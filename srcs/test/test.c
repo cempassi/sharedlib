@@ -6,7 +6,7 @@
 /*   By: cempassi <cempassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 05:38:31 by cempassi          #+#    #+#             */
-/*   Updated: 2019/02/18 18:46:01 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/04/08 15:13:19 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int				run_test(t_stack *tests)
 			parent_manager();
 		else
 		{
-			ft_printf("> %s: ", to_test->name);
+			ft_printf("> %-35s: ", to_test->name);
 			checker = to_test->test();
 			ft_strdel(&to_test->name);
 			free(to_test);
