@@ -6,7 +6,7 @@
 /*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 15:07:32 by nrechati          #+#    #+#             */
-/*   Updated: 2019/04/04 13:49:33 by nrechati         ###   ########.fr       */
+/*   Updated: 2019/04/09 19:57:11 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define HASHMAP_H
 
 # include <stdlib.h>
+# include "list.h"
 # define MIN_MAP_SIZE 8
 # define MIN_FILL 26
 # define MAX_FILL 89
