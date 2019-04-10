@@ -6,7 +6,7 @@
 #    By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/17 23:46:04 by cempassi          #+#    #+#              #
-#    Updated: 2019/04/03 15:53:24 by nrechati         ###   ########.fr        #
+#    Updated: 2019/04/10 15:43:34 by cempassi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -181,6 +181,7 @@ SRCS += ft_hmap_collision.c
 
 #--------------------test------------------------#
 SRCS += test.c
+SRCS += display_test.c
 
 #--------------------directory--------------------#
 SRCS += ft_dirlist.c

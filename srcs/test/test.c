@@ -6,7 +6,7 @@
 /*   By: cempassi <cempassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 05:38:31 by cempassi          #+#    #+#             */
-/*   Updated: 2019/04/08 15:13:19 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/04/10 15:37:19 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@
 static void		signal_catch(int signal)
 {
 	if (WTERMSIG(signal) == SIGSEGV)
-		ft_dprintf(2, "%@s\n", RED, "[SEGV]");
+		ft_dprintf(2, "%@s\n", RED, "[SEGV]", ++test_results.segv);
 	if (WTERMSIG(signal) == SIGBUS)
-		ft_dprintf(2, "%@s\n", RED, "[BUSE]");
+		ft_dprintf(2, "%@s\n", RED, "[BUSE]", ++test_results.segbus);
 	if (WTERMSIG(signal) == SIGABRT)
-		ft_dprintf(2, "%@s\n", RED, "[ABRT]");
+		ft_dprintf(2, "%@s\n", RED, "[ABRT]", ++test_results.sigabort);
 	if (WTERMSIG(signal) == SIGILL)
-		ft_dprintf(2, "%@s\n", RED, "[SILL]");
+		ft_dprintf(2, "%@s\n", RED, "[SILL]", ++test_results.sigkill);
 	if (WTERMSIG(signal) == SIGFPE)
-		ft_dprintf(2, "%@s\n", RED, "[FPEX]");
+		ft_dprintf(2, "%@s\n", RED, "[FPEX]", ++test_results.sigfpe);
 	exit(3);
 }
 
@@ -53,9 +53,9 @@ static void		parent_manager(void)
 	if (WIFEXITED(checker))
 	{
 		if (WEXITSTATUS(checker) == EXIT_SUCCESS)
-			ft_printf("%@s\n", GREEN, "[OK]");
+			ft_printf("%@s\n", GREEN, "[OK]", ++test_results.success);
 		else if (WEXITSTATUS(checker) == EXIT_FAILURE)
-			ft_dprintf(2, "%@s\n", RED, "[KO]");
+			ft_dprintf(2, "%@s\n", RED, "[KO]", ++test_results.failure);
 	}
 	else if (WIFSIGNALED(checker))
 		ft_dprintf(2, "%@s\n", RED, "Sig not handled");
@@ -70,12 +70,14 @@ int				load_test(t_stack *head, char *name, int (*f)(void))
 	return (ft_stckpush(head, &tmp, sizeof(t_test)));
 }
 
-int				run_test(t_stack *tests)
+t_result		run_test(t_stack *tests, char *name)
 {
-	t_test	*to_test;
-	pid_t	process;
-	int		checker;
+	t_test		*to_test;
+	pid_t		process;
+	int			checker;
 
+	ft_bzero(&test_results, sizeof(t_result));
+	test_results.name = name;
 	init_signal_catcher();
 	while (tests->size)
 	{
@@ -88,11 +90,8 @@ int				run_test(t_stack *tests)
 			checker = to_test->test();
 			ft_strdel(&to_test->name);
 			free(to_test);
-			if (checker)
-				exit(EXIT_FAILURE);
-			else
-				exit(EXIT_SUCCESS);
+			checker ? exit(EXIT_FAILURE) : exit(EXIT_SUCCESS);
 		}
 	}
-	return (0);
+	return (test_results);
 }
