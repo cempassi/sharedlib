@@ -6,7 +6,7 @@
 /*   By: cedricmpassi <cempassi@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/17 20:36:32 by cedricmpa         #+#    #+#             */
-/*   Updated: 2019/03/01 19:59:27 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/04/12 09:37:44 by skuppers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define STR_H
 # include <string.h>
 # define VECTOR_BUFFER_SIZE 16
-# define VECTOR_SCALE_MULT 2
 
 typedef struct		s_file
 {
