@@ -6,7 +6,7 @@
 /*   By: cempassi <cempassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 05:38:31 by cempassi          #+#    #+#             */
-/*   Updated: 2019/04/15 15:21:41 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/04/15 16:08:21 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,15 @@ static void		signal_catch(int signal)
 static void		init_signal_catcher(void)
 {
 	if (signal(SIGBUS, signal_catch) == SIG_ERR)
-		ft_dprintf(2,"Error occured catching the SIGBUS.");
+		ft_dprintf(2, "Error occured catching the SIGBUS.");
 	if (signal(SIGSEGV, signal_catch) == SIG_ERR)
-		ft_dprintf(2,"Error occured catching the SIGSEGV.");
+		ft_dprintf(2, "Error occured catching the SIGSEGV.");
 	if (signal(SIGABRT, signal_catch) == SIG_ERR)
-		ft_dprintf(2,"Error occured catching the SIGSEGV.");
+		ft_dprintf(2, "Error occured catching the SIGSEGV.");
 	if (signal(SIGILL, signal_catch) == SIG_ERR)
-		ft_dprintf(2,"Error occured catching the SIGSEGV.");
+		ft_dprintf(2, "Error occured catching the SIGSEGV.");
 	if (signal(SIGFPE, signal_catch) == SIG_ERR)
-		ft_dprintf(2,"Error occured catching the SIGSEGV.");
+		ft_dprintf(2, "Error occured catching the SIGSEGV.");
 }
 
 static void		parent_manager(int print_on)

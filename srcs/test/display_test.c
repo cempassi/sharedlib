@@ -6,7 +6,7 @@
 /*   By: cempassi <cempassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 15:13:08 by cempassi          #+#    #+#             */
-/*   Updated: 2019/04/15 15:22:48 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/04/15 16:07:44 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ void	print_test_result(t_list *node)
 			, GREEN, "OK", result->success
 			, RED, "KO", result->failure);
 	if (result->segv)
-		ft_printf("[%@s: %2d]" , RED, "SEGV", result->segv);
+		ft_printf("[%@s: %2d]", RED, "SEGV", result->segv);
 	if (result->segbus)
-		ft_printf("[%@s: %2d]" , RED, "ABRT", result->segbus);
+		ft_printf("[%@s: %2d]", RED, "ABRT", result->segbus);
 	ft_putchar('\n');
 }
 

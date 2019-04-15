@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dirdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cempassi <cempassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/18 07:25:43 by cempassi          #+#    #+#             */
-/*   Updated: 2019/04/15 16:03:59 by cempassi         ###   ########.fr       */
+/*   Created: 2019/04/15 15:47:19 by cempassi          #+#    #+#             */
+/*   Updated: 2019/04/15 15:56:33 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "list.h"
 
-static void	dir_del(void *file)
+/*
+** The return of the function pointer must be null if EQ, greater or smaller
+** than 0 if not EQ.
+*/
+
+int		ft_lstcmp(t_list *lst1, t_list *lst2, int (*f)(void *, void *))
 {
-	t_status	*tmp;
-
-	tmp = (t_status *)file;
-	if (tmp->path)
-		ft_strdel(&tmp->path);
-	if (tmp->name)
-		ft_strdel(&tmp->name);
-}
-
-void		ft_dirdel(t_list **dirlist)
-{
-	ft_lstdel(dirlist, dir_del);
+	if (!lst1 && !lst2)
+		return (0);
+	if ((lst1 && !lst2) || (!lst1 && lst2))
+		return (-1);
+	if (f(lst1->data, lst2->data))
+		return (-1);
+	return (ft_lstcmp(lst1->next, lst2->next, f));
 }

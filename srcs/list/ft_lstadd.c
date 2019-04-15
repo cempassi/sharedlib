@@ -6,11 +6,11 @@
 /*   By: cempassi <cempassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 13:36:42 by cempassi          #+#    #+#             */
-/*   Updated: 2019/01/17 14:41:17 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/04/15 15:48:02 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "list.h"
 
 void	ft_lstadd(t_list **alst, t_list *new)
 {
