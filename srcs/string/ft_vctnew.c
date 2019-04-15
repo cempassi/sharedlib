@@ -6,7 +6,7 @@
 /*   By: skuppers <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/08 10:29:42 by skuppers          #+#    #+#             */
-/*   Updated: 2019/03/01 20:01:38 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/04/15 17:11:09 by skuppers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ t_vector	*ft_vctnew(size_t optional_size)
 
 	if (!(new = malloc(sizeof(t_vector))))
 		return (NULL);
-
 	if (optional_size > 0)
 	{
 		if (!(buffer = ft_strnew(optional_size)))

@@ -6,13 +6,13 @@
 /*   By: skuppers <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/08 10:40:55 by skuppers          #+#    #+#             */
-/*   Updated: 2019/03/01 20:05:31 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/04/15 17:11:17 by skuppers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_vctlen(t_vector *vct)
+size_t	ft_vctlen(t_vector *vct)
 {
 	return (ft_strlen(vct->buffer));
 }
