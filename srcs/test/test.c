@@ -6,7 +6,7 @@
 /*   By: cempassi <cempassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 05:38:31 by cempassi          #+#    #+#             */
-/*   Updated: 2019/04/10 15:37:19 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/04/11 17:46:42 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static void		init_signal_catcher(void)
 		ft_dprintf(2,"Error occured catching the SIGSEGV.");
 }
 
-static void		parent_manager(void)
+static void		parent_manager(int print_on)
 {
 	int		checker;
 
@@ -53,9 +53,17 @@ static void		parent_manager(void)
 	if (WIFEXITED(checker))
 	{
 		if (WEXITSTATUS(checker) == EXIT_SUCCESS)
-			ft_printf("%@s\n", GREEN, "[OK]", ++test_results.success);
+		{
+			if (print_on)
+				ft_printf("%@s\n", GREEN, "[OK]");
+			++test_results.success;
+		}
 		else if (WEXITSTATUS(checker) == EXIT_FAILURE)
-			ft_dprintf(2, "%@s\n", RED, "[KO]", ++test_results.failure);
+		{
+			if (print_on)
+				ft_dprintf(2, "%@s\n", RED, "[KO]");
+			++test_results.failure;
+		}
 	}
 	else if (WIFSIGNALED(checker))
 		ft_dprintf(2, "%@s\n", RED, "Sig not handled");
@@ -70,7 +78,7 @@ int				load_test(t_stack *head, char *name, int (*f)(void))
 	return (ft_stckpush(head, &tmp, sizeof(t_test)));
 }
 
-t_result		run_test(t_stack *tests, char *name)
+t_result		run_test(t_stack *tests, char *name, int print_on)
 {
 	t_test		*to_test;
 	pid_t		process;
@@ -83,10 +91,11 @@ t_result		run_test(t_stack *tests, char *name)
 	{
 		to_test = (t_test *)ft_stckpop(tests);
 		if ((process = fork()))
-			parent_manager();
+			parent_manager(print_on);
 		else
 		{
-			ft_printf("> %-35s: ", to_test->name);
+			if (print_on)
+				ft_printf("> %-35s: ", to_test->name);
 			checker = to_test->test();
 			ft_strdel(&to_test->name);
 			free(to_test);
