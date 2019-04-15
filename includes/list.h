@@ -6,7 +6,7 @@
 /*   By: cempassi <cempassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/17 21:17:56 by cempassi          #+#    #+#             */
-/*   Updated: 2019/03/07 11:07:27 by skuppers         ###   ########.fr       */
+/*   Updated: 2019/04/15 17:04:37 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ t_list				*ft_lstfind(t_list *alst, void *to_find,\
 					int (*f)(void *, void *));
 int					ft_lstremove_if(t_list **lst, void *data,\
 					int (*tst)(void *, void *), void (*del)(void *));
+int					ft_lstcmp(t_list *lst1, t_list *lst2,\
+					int (*f)(void *, void *));
 t_list				*ft_getargslst(int ac, char **av);
 int					ft_stckpush(t_stack *stack, void *data, size_t size);
 void				*ft_stckpop(t_stack *stack);
