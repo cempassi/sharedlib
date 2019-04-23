@@ -6,7 +6,7 @@
 /*   By: cempassi <cempassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 21:55:01 by cempassi          #+#    #+#             */
-/*   Updated: 2019/04/02 16:47:41 by skuppers         ###   ########.fr       */
+/*   Updated: 2019/04/23 19:58:34 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@
 
 void				ft_freetab(char ***t);
 char				**ft_getargstab(int ac, char **av);
+void				ft_showtab(char **t);
 int					ft_getopt(int ac, char **av, const char *optstr);
 #endif
