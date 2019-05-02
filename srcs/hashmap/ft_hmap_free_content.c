@@ -6,7 +6,7 @@
 /*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/27 14:31:34 by nrechati          #+#    #+#             */
-/*   Updated: 2019/04/04 13:55:37 by nrechati         ###   ########.fr       */
+/*   Updated: 2019/04/30 14:19:15 by nrechati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ void	ft_hmap_free_content(t_hash *hashmap, void (*del)(void *))
 				ft_del_hnode(node, del);
 				free(tmp);
 			}
+			hashmap->map[i] = NULL;
 		}
 		i++;
 	}
-	free(hashmap->map);
-	hashmap->map = NULL;
+	hashmap->used = 0;
 }
