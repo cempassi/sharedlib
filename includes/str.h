@@ -6,7 +6,7 @@
 /*   By: cedricmpassi <cempassi@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/17 20:36:32 by cedricmpa         #+#    #+#             */
-/*   Updated: 2019/04/12 09:37:44 by skuppers         ###   ########.fr       */
+/*   Updated: 2019/05/02 22:53:13 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ size_t				ft_strlen(const char *s);
 char				*ft_strstr(const char *haystack, const char *needle);
 char				*ft_strrev(char *str);
 void				ft_strupper(char *str);
+int					ft_strcheck(char *str, int (*f)(int));
 int					ft_getdelim(const int fd, char **line, char delim);
 char				*ft_strnstr(const char *haystack, const char *needle,\
 					size_t len);

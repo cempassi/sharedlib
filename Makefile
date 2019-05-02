@@ -6,7 +6,7 @@
 #    By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/17 23:46:04 by cempassi          #+#    #+#              #
-#    Updated: 2019/04/23 22:05:26 by cempassi         ###   ########.fr        #
+#    Updated: 2019/05/02 22:49:12 by cempassi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -103,6 +103,7 @@ SRCS += ft_strinsert.c
 SRCS += ft_strcspn.c
 SRCS += ft_strspn.c
 SRCS += ft_strrev.c
+SRCS += ft_strcheck.c
 
 #--------------------Conversion------------------#
 SRCS += ft_atoi.c
