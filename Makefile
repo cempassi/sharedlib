@@ -66,6 +66,7 @@ SRCS += ft_vctlen.c
 SRCS += ft_vctnew.c
 SRCS += ft_strbeginswith.c
 SRCS += ft_strendswith.c
+SRCS += ft_isnumeric.c
 SRCS += ft_isalnum.c
 SRCS += ft_isalpha.c
 SRCS += ft_isascii.c
