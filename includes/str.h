@@ -65,6 +65,7 @@ size_t				ft_strlen(const char *s);
 char				*ft_strstr(const char *haystack, const char *needle);
 char				*ft_strrev(char *str);
 void				ft_strupper(char *str);
+void				ft_strlower(char *str);
 int					ft_isnumeric(char *str);
 int					ft_strcheck(char *str, int (*f)(int));
 int					ft_getdelim(const int fd, char **line, char delim);
