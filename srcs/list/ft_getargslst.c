@@ -16,10 +16,8 @@ t_list		*ft_getargslst(int ac, char **av)
 {
 	t_list	*lst;
 	int		i;
-	int		j;
 
 	i = 1;
-	j = 0;
 	lst = NULL;
 	while (i < ac && av[i][0] == '-' && av[i][1] && av[i][1] != '-')
 		i++;

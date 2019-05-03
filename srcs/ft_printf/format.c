@@ -34,13 +34,11 @@ static void		format_init(t_format *format)
 
 static t_list	*parser(char *spec, va_list args)
 {
-	char		*holder;
 	t_format	format;
 
 	format_init(&format);
 	if (spec)
 	{
-		holder = spec;
 		spec++;
 		format.diff += 1;
 		if (ft_strchr(FLAGS, *spec))
