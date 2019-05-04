@@ -6,7 +6,7 @@
 #    By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/17 23:46:04 by cempassi          #+#    #+#              #
-#    Updated: 2019/05/02 22:49:12 by cempassi         ###   ########.fr        #
+#    Updated: 2019/05/05 00:33:53 by cempassi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -195,6 +195,7 @@ SRCS += setup_test.c
 #--------------------directory--------------------#
 SRCS += ft_dirlist.c
 SRCS += ft_dirdel.c
+SRCS += ft_checkstat.c
 
 DSYM += $(NAME).dSYM
 DSYM += $(DBNAME).dSYM
