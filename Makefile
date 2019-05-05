@@ -234,11 +234,11 @@ $(DBNAME): $(OBJD)
 	ar rus $@ $^
 	printf "$(GREEN)$@ is ready.\n$(NC)"
 
-$(OBJS): $(PATHO)%.o : %.c $(INCS)
+$(OBJS): $(PATHO)%.o : %.c $(INCS) Makefile
 	$(COMPILE) $(CFLAGS) $(IFLAGS) $< -o $@
 	printf "$(ONELINE)$(BLUE)Compiling $<                \n$(NC)"
 
-$(OBJD): $(PATHO)db%.o : %.c $(INCS)
+$(OBJD): $(PATHO)db%.o : %.c $(INCS) Makefile
 	$(DEBUG) $(DFLAGS) $(CFLAGS) $(IFLAGS) $< -o $@
 	printf "$(ONELINE)$(BLUE)Compiling $< for debug                     \n$(NC)"
 
@@ -263,4 +263,3 @@ fclean: clean cleandb
 re : fclean all
 
 .PHONY: all clean fclean debug cleandb
-.SILENT:

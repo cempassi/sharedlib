@@ -63,6 +63,8 @@ int		ft_dprintf(int fd, const char *format, ...)
 	va_list	args;
 	int		result;
 
+	if (fd < 0)
+		return (-1);
 	va_start(args, format);
 	result = ft_vdprintf(format, args, fd);
 	va_end(args);
