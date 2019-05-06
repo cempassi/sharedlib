@@ -71,8 +71,8 @@ int			ft_hmap_resize(t_hash *hashmap, size_t nw_size)
 	if (!new)
 		return (0);
 	relocate_hash(hashmap, new, nw_size);
-	ft_printf("\n\n\x1b[33m => MAP RESIZED SUCCESS  || From filled = %zu%% "
-		, ft_hmap_filled_norm(hashmap));
+//	ft_printf("\n\n\x1b[33m => MAP RESIZED SUCCESS  || From filled = %zu%% "
+//		, ft_hmap_filled_norm(hashmap));
 	ft_free(hashmap->map);
 	hashmap->map = new;
 	hashmap->map_size = nw_size;

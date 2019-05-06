@@ -14,11 +14,8 @@
 
 int		ft_lstdelfirst(t_list **alst, void (*del)(void *))
 {
-	t_list		*holder;
-
 	if (!alst || !*alst)
 		return (-1);
-	holder = (*alst)->next;
 	ft_lstdelone(alst, del);
 	return (0);
 }
