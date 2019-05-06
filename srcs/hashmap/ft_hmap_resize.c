@@ -76,7 +76,7 @@ int			ft_hmap_resize(t_hash *hashmap, size_t nw_size)
 	ft_free(hashmap->map);
 	hashmap->map = new;
 	hashmap->map_size = nw_size;
-	ft_printf("To filled = %zu%% || NEW SIZE = %zu\x1b[0m\n\n"
-		, ft_hmap_filled_norm(hashmap), hashmap->map_size);
+//	ft_printf("To filled = %zu%% || NEW SIZE = %zu\x1b[0m\n\n"
+//		, ft_hmap_filled_norm(hashmap), hashmap->map_size);
 	return (1);
 }
