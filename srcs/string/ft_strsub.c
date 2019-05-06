@@ -12,6 +12,7 @@
 
 #include "ft_printf.h"
 #include <stdlib.h>
+#include "ft_malloc.h"
 
 static char	*ft_ncpy(char *dst, const char *src, size_t len)
 {
@@ -39,7 +40,7 @@ char		*ft_strsub(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	if (!(sub = (char *)malloc(len + 1)))
+	if (!(sub = (char *)ft_malloc(len + 1)))
 		return (NULL);
 	sub = ft_ncpy(sub, s + start, len);
 	sub[len] = '\0';

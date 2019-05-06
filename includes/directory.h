@@ -15,7 +15,6 @@
 # include <sys/stat.h>
 # include <dirent.h>
 # include <sys/types.h>
-# include <uuid/uuid.h>
 # include "list.h"
 
 typedef struct dirent	t_dirent;

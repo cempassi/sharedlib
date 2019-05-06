@@ -12,6 +12,7 @@
 
 #include "libft.h"
 #include "hashmap.h"
+#include "ft_malloc.h"
 
 static int		resize_check(t_hash *hashmap)
 {
@@ -31,12 +32,12 @@ static int		resize_check(t_hash *hashmap)
 
 void			ft_del_hnode(void *node, void (*del)(void *))
 {
-	free(((t_hnode *)node)->key);
+	ft_free(((t_hnode *)node)->key);
 	((t_hnode *)node)->key = NULL;
 	if (del)
 		del(((t_hnode *)node)->data);
 	((t_hnode *)node)->data = NULL;
-	free(node);
+	ft_free(node);
 }
 
 static int		remove_first(t_hash *hashmap, uint32_t hash
@@ -47,7 +48,7 @@ static int		remove_first(t_hash *hashmap, uint32_t hash
 	tmp = hashmap->map[hash];
 	hashmap->map[hash] = hashmap->map[hash]->next;
 	ft_del_hnode(data, del);
-	free(tmp);
+	ft_free(tmp);
 	if (hashmap->used > 0)
 		hashmap->used -= 1;
 	if (!resize_check(hashmap))
@@ -62,7 +63,7 @@ static int		remove_data(t_hash *hashmap, t_list *ptr
 
 	tmp = ptr->next->next;
 	ft_del_hnode(data, del);
-	free(ptr->next);
+	ft_free(ptr->next);
 	ptr->next = tmp;
 	if (hashmap->used > 0)
 		hashmap->used -= 1;

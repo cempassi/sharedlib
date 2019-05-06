@@ -12,6 +12,7 @@
 
 #include "ft_printf.h"
 #include <stdlib.h>
+#include "ft_malloc.h"
 
 char	*ft_strmap(char const *s, char (*f)(char))
 {
@@ -20,7 +21,7 @@ char	*ft_strmap(char const *s, char (*f)(char))
 
 	if (!s)
 		return (NULL);
-	if (!(map = (char *)malloc(ft_strlen(s) + 1)))
+	if (!(map = (char *)ft_malloc(ft_strlen(s) + 1)))
 		return (NULL);
 	tmp = map;
 	while (*s)

@@ -13,6 +13,7 @@
 #include <stdlib.h>
 #include "libft.h"
 #include "ft_printf.h"
+#include "ft_malloc.h"
 
 void	*ft_stckpop(t_stack *stack)
 {
@@ -24,7 +25,7 @@ void	*ft_stckpop(t_stack *stack)
 	holder = stack->head;
 	stack->head = stack->head->next;
 	data = holder->data;
-	free(holder);
+	ft_free(holder);
 	stack->size--;
 	return (data);
 }

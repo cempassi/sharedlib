@@ -16,6 +16,7 @@
 # define BASE_MAX 66
 # include <string.h>
 # include "ft_printf.h"
+# include "ft_malloc.h"
 # include "list.h"
 # include "directory.h"
 # include "str.h"

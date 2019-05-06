@@ -16,6 +16,7 @@
 # include <stdarg.h>
 # include <stdint.h>
 # include <stddef.h>
+# include <sys/types.h>
 # include "str.h"
 # include "list.h"
 # include "memory.h"

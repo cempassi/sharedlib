@@ -12,6 +12,7 @@
 
 #include "ft_printf.h"
 #include <stdlib.h>
+#include "ft_malloc.h"
 
 void	ft_lstdelone(t_list **alst, void (*del)(void *))
 {
@@ -21,6 +22,6 @@ void	ft_lstdelone(t_list **alst, void (*del)(void *))
 		del((*alst)->data);
 	if ((*alst)->data)
 		ft_memdel(&(*alst)->data);
-	free(*alst);
+	ft_free(*alst);
 	*alst = NULL;
 }

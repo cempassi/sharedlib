@@ -11,12 +11,13 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "ft_malloc.h"
 
 void	ft_memdel(void **ap)
 {
 	if (!ap || !*ap)
 		return ;
-	free(*ap);
+	ft_free(*ap);
 	*ap = NULL;
 	return ;
 }

@@ -12,6 +12,7 @@
 
 #include <stdlib.h>
 #include "ft_printf.h"
+#include "ft_malloc.h"
 
 char		*ft_strinsert(char **str, char c, size_t index)
 {
@@ -25,7 +26,7 @@ char		*ft_strinsert(char **str, char c, size_t index)
 	i = 0;
 	cpy = *str;
 	len = ft_strlen(*str) + 2;
-	if (!(tmp = (char *)malloc(sizeof(char) * len)))
+	if (!(tmp = (char *)ft_malloc(sizeof(char) * len)))
 		return (NULL);
 	while (--len)
 	{

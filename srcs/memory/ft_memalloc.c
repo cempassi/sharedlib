@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "ft_malloc.h"
 #include <stdlib.h>
 
 static void	ft_init(void *s, size_t n)
@@ -26,7 +27,7 @@ void		*ft_memalloc(size_t size)
 {
 	void	*ptr;
 
-	if (!size || !(ptr = malloc(size)))
+	if (!size || !(ptr = ft_malloc(size)))
 		return (NULL);
 	ft_init(ptr, size);
 	return (ptr);

@@ -11,12 +11,13 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "ft_malloc.h"
 
 void	ft_strdel(char **as)
 {
 	if (!as || *as == NULL)
 		return ;
-	free(*as);
+	ft_free(*as);
 	*as = NULL;
 	return ;
 }

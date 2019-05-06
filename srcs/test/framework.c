@@ -15,6 +15,7 @@
 #include <sys/wait.h>
 #include <stdlib.h>
 #include "libft.h"
+#include "ft_malloc.h"
 
 static void		signal_catch(int signal)
 {
@@ -98,7 +99,7 @@ t_result		run_test(t_stack *tests, char *name, int print_on)
 				ft_printf("> %-35s: ", to_test->name);
 			checker = to_test->test();
 			ft_strdel(&to_test->name);
-			free(to_test);
+			ft_free(to_test);
 			checker ? exit(EXIT_FAILURE) : exit(EXIT_SUCCESS);
 		}
 	}

@@ -12,12 +12,13 @@
 
 #include "ft_printf.h"
 #include <stdlib.h>
+#include "ft_malloc.h"
 
 t_list		*ft_lstnew(void const *data, size_t data_size)
 {
 	t_list		*new;
 
-	if (!(new = (t_list *)malloc(sizeof(t_list))))
+	if (!(new = (t_list *)ft_malloc(sizeof(t_list))))
 		return (NULL);
 	if (!data)
 	{
@@ -26,9 +27,9 @@ t_list		*ft_lstnew(void const *data, size_t data_size)
 		new->next = NULL;
 		return (new);
 	}
-	if (!(new->data = malloc(data_size)))
+	if (!(new->data = ft_malloc(data_size)))
 	{
-		free(new);
+		ft_free(new);
 		return (NULL);
 	}
 	new->data_size = data_size;

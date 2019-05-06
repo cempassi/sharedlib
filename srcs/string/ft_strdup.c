@@ -12,6 +12,7 @@
 
 #include "ft_printf.h"
 #include <stdlib.h>
+#include "ft_malloc.h"
 
 char	*ft_strdup(const char *s1)
 {
@@ -19,7 +20,7 @@ char	*ft_strdup(const char *s1)
 
 	if (!s1)
 		return (NULL);
-	if (!(dst = (char *)malloc(sizeof(char) * ft_strlen(s1) + 1)))
+	if (!(dst = (char *)ft_malloc(sizeof(char) * ft_strlen(s1) + 1)))
 		return (NULL);
 	return (ft_strcpy(dst, s1));
 }

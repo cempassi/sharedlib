@@ -12,6 +12,7 @@
 
 #include "libft.h"
 #include "hashmap.h"
+#include "ft_malloc.h"
 
 size_t		ft_get_two_pw(size_t nb)
 {
@@ -72,7 +73,7 @@ int			ft_hmap_resize(t_hash *hashmap, size_t nw_size)
 	relocate_hash(hashmap, new, nw_size);
 	ft_printf("\n\n\x1b[33m => MAP RESIZED SUCCESS  || From filled = %zu%% "
 		, ft_hmap_filled_norm(hashmap));
-	free(hashmap->map);
+	ft_free(hashmap->map);
 	hashmap->map = new;
 	hashmap->map_size = nw_size;
 	ft_printf("To filled = %zu%% || NEW SIZE = %zu\x1b[0m\n\n"

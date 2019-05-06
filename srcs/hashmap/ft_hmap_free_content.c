@@ -12,6 +12,7 @@
 
 #include "libft.h"
 #include "hashmap.h"
+#include "ft_malloc.h"
 
 void	ft_hmap_free_content(t_hash *hashmap, void (*del)(void *))
 {
@@ -35,7 +36,7 @@ void	ft_hmap_free_content(t_hash *hashmap, void (*del)(void *))
 				tmp->next = NULL;
 				node = (t_hnode *)tmp->data;
 				ft_del_hnode(node, del);
-				free(tmp);
+				ft_free(tmp);
 			}
 			hashmap->map[i] = NULL;
 		}

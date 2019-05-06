@@ -12,6 +12,7 @@
 
 #include "ft_printf.h"
 #include <stdlib.h>
+#include "ft_malloc.h"
 
 static char			*ft_chr(const char *s, int c)
 {
@@ -44,7 +45,7 @@ static char			*ft_sub(char const *s, unsigned int start, size_t len)
 {
 	char			*sub;
 
-	if (!(sub = (char *)malloc(len + 1)))
+	if (!(sub = (char *)ft_malloc(len + 1)))
 		return (NULL);
 	sub = ft_ncpy(sub, s + start, len);
 	sub[len] = '\0';
@@ -89,7 +90,7 @@ char				*ft_strtrim(char const *s)
 	str = trimmer(s, &len);
 	if (str == NULL)
 	{
-		if (!(trim = (char *)malloc(sizeof(char) * 1)))
+		if (!(trim = (char *)ft_malloc(sizeof(char) * 1)))
 			return (NULL);
 		*trim = '\0';
 		return (trim);

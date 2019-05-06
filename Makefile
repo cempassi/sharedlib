@@ -39,6 +39,7 @@ PATHO = objs/
 PATHI = includes/
 
 INCS += libft.h
+INCS += ft_malloc.h
 INCS += ft_printf.h
 INCS += conversion.h
 INCS += output.h
@@ -58,6 +59,15 @@ SRCS += ft_memcpy.c
 SRCS += ft_memccpy.c
 SRCS += ft_memdel.c
 SRCS += ft_memset.c
+
+#---------------Garbage Collector----------------#
+SRCS += ft_malloc.c
+SRCS += ft_calloc.c
+SRCS += ft_realloc.c
+SRCS += ft_free.c
+SRCS += ft_flush_memory.c
+SRCS += ft_tool_malloc.c
+SRCS += ft_head_memory.c
 
 #--------------------Strings---------------------#
 SRCS += ft_vctreset.c
@@ -210,6 +220,7 @@ IFLAGS = -I$(PATHI)
 CFLAGS = $(WFLAGS)
 
 vpath %.c srcs/conversion
+vpath %.c srcs/garbage_collector
 vpath %.c srcs/directory
 vpath %.c srcs/ft_printf
 vpath %.c srcs/list
@@ -263,3 +274,4 @@ fclean: clean cleandb
 re : fclean all
 
 .PHONY: all clean fclean debug cleandb
+.SILENT:
