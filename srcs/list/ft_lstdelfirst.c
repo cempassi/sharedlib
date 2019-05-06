@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstdelfirst.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cempassi <cempassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/12 13:06:45 by cempassi          #+#    #+#             */
-/*   Updated: 2019/05/06 20:53:30 by cempassi         ###   ########.fr       */
+/*   Created: 2019/05/06 20:52:50 by cempassi          #+#    #+#             */
+/*   Updated: 2019/05/06 20:56:32 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "list.h"
-#include "ft_malloc.h"
 
-void	ft_lstdelone(t_list **alst, void (*del)(void *))
+int		ft_lstdelfirst(t_list **alst, void (*del)(void *))
 {
-	if (!alst || !alst)
-		return ;
-	if (del)
-		del((*alst)->data);
-	if ((*alst)->data)
-		ft_memdel(&(*alst)->data);
-	ft_free(*alst);
-	*alst = NULL;
+	t_list		*holder;
+
+	if (!alst || !*alst)
+		return (-1);
+	holder = (*alst)->next;
+	ft_lstdelone(alst, del);
+	return (0);
 }

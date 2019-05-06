@@ -6,7 +6,7 @@
 /*   By: cempassi <cempassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/17 21:17:56 by cempassi          #+#    #+#             */
-/*   Updated: 2019/05/04 18:53:33 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/05/06 20:56:47 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ t_list				*ft_lstnew(void const *data, size_t data_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *));
 void				ft_lstdelnext(t_list *current, void f(void *));
 void				*ft_lstdel(t_list **alst, void (*del)(void *));
+int					ft_lstdelfirst(t_list **alst, void (*del)(void *));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(void *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
