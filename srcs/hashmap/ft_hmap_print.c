@@ -6,7 +6,7 @@
 /*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/26 12:03:12 by nrechati          #+#    #+#             */
-/*   Updated: 2019/04/04 13:48:53 by nrechati         ###   ########.fr       */
+/*   Updated: 2019/05/07 16:16:35 by nrechati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,8 @@ void			ft_print_hashmap_p(t_hash *hashmap)
 			ptr = hashmap->map[i];
 			while (ptr != NULL)
 			{
-				ft_printf(" | Key = %s -> Data = %p | -", ((t_hnode *)ptr->data)->key, ((t_hnode *)ptr->data)->data);
+				ft_printf(" | Key = %s -> Data = %p | -"
+				, ((t_hnode *)ptr->data)->key, ((t_hnode *)ptr->data)->data);
 				ptr = ptr->next;
 			}
 			ft_printf(" NULL\n");

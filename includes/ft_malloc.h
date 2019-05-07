@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_malloc.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/07 15:54:20 by nrechati          #+#    #+#             */
+/*   Updated: 2019/05/07 15:54:21 by nrechati         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_MALLOC_H
 # define FT_MALLOC_H
 
@@ -13,4 +25,4 @@ void	ft_flush_memory(void);
 void	*ft_get_head_list_allocation(int flush);
 t_list	*ft_lstnew_no_malloc(unsigned char **data);
 
-#endif 
+#endif

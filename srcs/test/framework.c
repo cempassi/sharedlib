@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   framework.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cempassi <cempassi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 05:38:31 by cempassi          #+#    #+#             */
-/*   Updated: 2019/04/15 16:08:21 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/05/07 16:22:02 by nrechati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@
 static void		signal_catch(int signal)
 {
 	if (WTERMSIG(signal) == SIGSEGV)
-		ft_dprintf(2, "%@s\n", RED, "[SEGV]", ++test_results.segv);
+		ft_dprintf(2, "%@s\n", RED, "[SEGV]", ++g_test_results.segv);
 	if (WTERMSIG(signal) == SIGBUS)
-		ft_dprintf(2, "%@s\n", RED, "[BUSE]", ++test_results.segbus);
+		ft_dprintf(2, "%@s\n", RED, "[BUSE]", ++g_test_results.segbus);
 	if (WTERMSIG(signal) == SIGABRT)
-		ft_dprintf(2, "%@s\n", RED, "[ABRT]", ++test_results.sigabort);
+		ft_dprintf(2, "%@s\n", RED, "[ABRT]", ++g_test_results.sigabort);
 	if (WTERMSIG(signal) == SIGILL)
-		ft_dprintf(2, "%@s\n", RED, "[SILL]", ++test_results.sigkill);
+		ft_dprintf(2, "%@s\n", RED, "[SILL]", ++g_test_results.sigkill);
 	if (WTERMSIG(signal) == SIGFPE)
-		ft_dprintf(2, "%@s\n", RED, "[FPEX]", ++test_results.sigfpe);
+		ft_dprintf(2, "%@s\n", RED, "[FPEX]", ++g_test_results.sigfpe);
 	exit(3);
 }
 
@@ -57,13 +57,13 @@ static void		parent_manager(int print_on)
 		{
 			if (print_on)
 				ft_printf("%@s\n", GREEN, "[OK]");
-			++test_results.success;
+			++g_test_results.success;
 		}
 		else if (WEXITSTATUS(checker) == EXIT_FAILURE)
 		{
 			if (print_on)
 				ft_dprintf(2, "%@s\n", RED, "[KO]");
-			++test_results.failure;
+			++g_test_results.failure;
 		}
 	}
 	else if (WIFSIGNALED(checker))
@@ -85,8 +85,8 @@ t_result		run_test(t_stack *tests, char *name, int print_on)
 	pid_t		process;
 	int			checker;
 
-	ft_bzero(&test_results, sizeof(t_result));
-	test_results.name = name;
+	ft_bzero(&g_test_results, sizeof(t_result));
+	g_test_results.name = name;
 	init_signal_catcher();
 	while (tests->size)
 	{
@@ -103,5 +103,5 @@ t_result		run_test(t_stack *tests, char *name, int print_on)
 			checker ? exit(EXIT_FAILURE) : exit(EXIT_SUCCESS);
 		}
 	}
-	return (test_results);
+	return (g_test_results);
 }

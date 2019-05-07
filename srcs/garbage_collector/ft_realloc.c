@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/07 15:58:06 by nrechati          #+#    #+#             */
+/*   Updated: 2019/05/07 15:58:40 by nrechati         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_malloc.h"
 
 static void	ft_replace_node(t_list **lst_ptr, void *old_ptr
@@ -11,7 +23,7 @@ static void	ft_replace_node(t_list **lst_ptr, void *old_ptr
 		if (run->data == old_ptr)
 		{
 			free(old_ptr);
-			run->data = *new; 
+			run->data = *new;
 			return ;
 		}
 		run = run->next;

@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   test.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cempassi <cempassi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 13:27:55 by cempassi          #+#    #+#             */
-/*   Updated: 2019/04/11 17:54:03 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/05/07 16:19:32 by nrechati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBUNIT_H
-# define LIBUNIT_H
+#ifndef TEST_H
+# define TEST_H
 # include "libft.h"
 # define RED "124"
 # define GREEN "76"
@@ -20,12 +20,10 @@
 # define ISTRUE 0
 # define ISFALSE -1
 
-
-
 typedef struct	s_test
 {
-	char	*name;
-	int		(*test)(void);
+	char		*name;
+	int			(*test)(void);
 }				t_test;
 
 typedef struct	s_result
@@ -40,12 +38,12 @@ typedef struct	s_result
 	int			sigfpe;
 }				t_result;
 
-t_result	test_results;
+t_result		g_test_results;
 
-t_result	run_test(t_stack *tests, char *name, int print_on);
-int			load_test(t_stack *tests, char *name, int (*f)(void));
-void		print_test_header(void);
-void		print_test_separator(int print_on);
-void		set_test(t_list **lst, t_result results);
-void		print_test_result(t_list *node);
+t_result		run_test(t_stack *tests, char *name, int print_on);
+int				load_test(t_stack *tests, char *name, int (*f)(void));
+void			print_test_header(void);
+void			print_test_separator(int print_on);
+void			set_test(t_list **lst, t_result results);
+void			print_test_result(t_list *node);
 #endif
