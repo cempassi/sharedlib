@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   output.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cedricmpassi <cempassi@student.42.fr>      +#+  +:+       +#+        */
+/*   By: cedricmpassi <ffoissey@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/17 20:42:54 by cedricmpa         #+#    #+#             */
 /*   Updated: 2019/02/17 20:49:28 by cedricmpa        ###   ########.fr       */

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   memory.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cedricmpassi <cempassi@student.42.fr>      +#+  +:+       +#+        */
+/*   By: cedricmpassi <ffoissey@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/17 20:36:33 by cedricmpa         #+#    #+#             */
 /*   Updated: 2019/02/17 20:42:04 by cedricmpa        ###   ########.fr       */

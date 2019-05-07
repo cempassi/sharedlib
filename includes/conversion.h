@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   conversion.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cedricmpassi <cempassi@student.42.fr>      +#+  +:+       +#+        */
+/*   By: cedricmpassi <ffoissey@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/17 20:46:19 by cedricmpa         #+#    #+#             */
 /*   Updated: 2019/02/17 20:47:40 by cedricmpa        ###   ########.fr       */
