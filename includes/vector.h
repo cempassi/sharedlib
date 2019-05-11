@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <libft.h>
+
 # define DEFAULT_VECTOR_SIZE 64
 # define DEFAULT_VECTOR_SCALE 8
  
@@ -16,7 +17,6 @@ typedef struct      s_vector
 
 t_vector            *vct_new(uint64_t size);
 uint8_t             vct_reset(t_vector *vector);
-
 uint64_t            vct_len(t_vector *vector);
 uint64_t            vct_size(t_vector *vector);
 

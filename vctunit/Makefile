@@ -1,0 +1,1 @@
+gcc -o test vct_uint.c -I vct_unit.h -I ../includes/ ../libft.a
