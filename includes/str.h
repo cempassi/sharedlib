@@ -22,7 +22,9 @@ typedef struct		s_file
 	char			*str;
 }					t_file;
 
-typedef struct		s_vector
+
+//////////////////////////////////////////////////////////////////////
+/*typedef struct		s_vector
 {
 	char			*buffer;
 	size_t			size;
@@ -31,7 +33,10 @@ typedef struct		s_vector
 int					ft_vctreset(t_vector *vct);
 int					ft_vctrescale(t_vector *vct);
 size_t				ft_vctlen(t_vector *vct);
-t_vector			*ft_vctnew(size_t optional_size);
+t_vector			*ft_vctnew(size_t optional_size);*/
+////////////////////////////////////////////////////////////////////
+
+
 
 int					ft_strendswith(char *string, char *suffix);
 int					ft_strbeginswith(const char *string, char *prefix);
