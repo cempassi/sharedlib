@@ -93,6 +93,9 @@ SRCS += vct_add.c
 SRCS += vct_push.c
 SRCS += vct_pop.c
 SRCS += vct_cut.c
+SRCS += vct_del.c
+SRCS += vct_scpy.c
+SRCS += vct_scat.c
 
 #--------------------Strings---------------------#
 SRCS += ft_strbeginswith.c

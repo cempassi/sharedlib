@@ -1,1 +1,2 @@
-gcc -o test vct_uint.c -I vct_unit.h -I ../includes/ ../libft.a
+clang -o test vct_uint.c -I../includes/ ../libft.a
+
