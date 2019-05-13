@@ -10,6 +10,19 @@ static void tearDown(t_vector **vect)
     vct_del(vect);
 }
 
+static int test_dups(void)
+{
+    t_vector *dest;
+
+
+    dest = vct_dups("0123456789abcdef");
+    if (!ft_strequ(vct_get_string(dest), "0123456789abcdef"))
+        return (-1);
+
+    tearDown(&dest);
+    return (0);
+}
+
 static int test_replace_string(void)
 {
      t_vector *dest;
@@ -416,6 +429,7 @@ t_result test_vectors(int print)
 
     load_test(&test, "Vector replace char", test_replace_char);
     load_test(&test, "Vector replace string", test_replace_string);
+    load_test(&test, "Vector dup string", test_dups);
 
     return (run_test(&test, "Vector tests", print));
 }

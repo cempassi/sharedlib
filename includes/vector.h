@@ -34,6 +34,7 @@ int8_t             vct_scat(t_vector *dest, char *src, uint64_t len);
 
 char                *vct_get_string(t_vector *vector);
 char                *vct_sub(t_vector *vector, uint64_t start, uint64_t length);
+t_vector            *vct_dups(char *str);
 
 int8_t             vct_insert_char(t_vector *vector, char c, uint64_t index);
 int8_t             vct_del_char(t_vector *vector, uint64_t index);
