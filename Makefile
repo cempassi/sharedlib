@@ -98,6 +98,7 @@ SRCS += vct_scpy.c
 SRCS += vct_scat.c
 SRCS += vct_shift_tool.c
 SRCS += vct_dups.c
+SRCS += vct_dup.c
 
 #--------------------Strings---------------------#
 SRCS += ft_strbeginswith.c
