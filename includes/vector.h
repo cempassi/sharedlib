@@ -7,7 +7,7 @@
 
 # define DEFAULT_VECTOR_SIZE 64
 # define DEFAULT_VECTOR_SCALE 16
- 
+
 typedef struct      s_vector
 {
     char            *buffer;
@@ -32,6 +32,7 @@ int8_t             vct_ncat(t_vector *dest, t_vector *src, uint64_t len);
 int8_t             vct_scpy(t_vector *dest, char *src, uint64_t len);
 int8_t             vct_scat(t_vector *dest, char *src, uint64_t len);
 
+char				vct_charat(t_vector *vct, uint64_t idx);
 char                *vct_get_string(t_vector *vector);
 char                *vct_sub(t_vector *vector, uint64_t start, uint64_t length);
 t_vector            *vct_dups(char *str);
