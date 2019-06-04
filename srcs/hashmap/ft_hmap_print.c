@@ -6,7 +6,7 @@
 /*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/26 12:03:12 by skuppers          #+#    #+#             */
-/*   Updated: 2019/06/04 14:11:25 by nrechati         ###   ########.fr       */
+/*   Updated: 2019/06/04 17:31:11 by nrechati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void			ft_simplified_hash_print(t_hash *hashmap)
 	i = -1;
 	if (hashmap->used == 0)
 		return ;
-	ft_printf("hits\tbin\tpath\n");
+	ft_printf("%*s\t%-*s\t%s\n", 4, "hits", hashmap->print_pad, "bin", "path");
 	while (++i < hashmap->map_size)
 	{
 		if (hashmap->map[i] != NULL)
