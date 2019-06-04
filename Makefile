@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: skuppers <skuppers@student.42.fr>          +#+  +:+       +#+         #
+#    By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/17 23:46:04 by ffoissey          #+#    #+#              #
-#    Updated: 2019/05/06 20:57:18 by ffoissey         ###   ########.fr        #
+#    Updated: 2019/06/04 17:06:43 by nrechati         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -197,6 +197,7 @@ SRCS += ft_hmap_remove.c
 SRCS += ft_hmap_resize.c
 SRCS += ft_hmap_free_content.c
 SRCS += ft_hmap_collision.c
+SRCS += ft_hmap_hits.c
 
 #--------------------test------------------------#
 SRCS += framework.c

@@ -6,7 +6,7 @@
 /*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 15:07:32 by skuppers          #+#    #+#             */
-/*   Updated: 2019/06/04 16:40:32 by nrechati         ###   ########.fr       */
+/*   Updated: 2019/06/04 17:03:27 by nrechati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # define MIN_FILL 26
 # define MAX_FILL 89
 # define POW_128 7
+# define SUCCESS 0
+# define FAILURE -1
 
 typedef struct	s_hash
 {
@@ -30,7 +32,7 @@ typedef struct	s_hash
 
 typedef struct	s_hnode
 {
-	int			hits;
+	uint32_t	hits;
 	char		*key;
 	void		*data;
 }				t_hnode;
@@ -51,5 +53,6 @@ void			ft_hmap_free_content(t_hash *hashmap, void (*del)(void *));
 void			ft_del_hnode(void *node, void (*del)(void *));
 size_t			ft_hmap_collision(t_hash *hashmap);
 size_t			ft_hmap_collision_rate(t_hash *hashmap);
+int8_t			ft_hmap_hits(t_hash *hashmap, char *key);
 
 #endif
