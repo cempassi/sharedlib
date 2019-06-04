@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hashmap.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skuppers <skuppers@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 15:07:32 by skuppers          #+#    #+#             */
-/*   Updated: 2019/04/09 19:57:11 by ffoissey         ###   ########.fr       */
+/*   Updated: 2019/06/04 16:40:32 by nrechati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 
 typedef struct	s_hash
 {
+	size_t		print_pad;
 	size_t		map_size;
 	size_t		used;
 	t_list		**map;
@@ -29,6 +30,7 @@ typedef struct	s_hash
 
 typedef struct	s_hnode
 {
+	int			hits;
 	char		*key;
 	void		*data;
 }				t_hnode;
@@ -37,6 +39,7 @@ uint32_t		ft_hash_str(char *key, size_t tab_size);
 t_hash			ft_hmap_init(size_t size);
 void			ft_print_hashmap(t_hash *hashmap);
 void			ft_print_hashmap_p(t_hash *hashmap);
+void			ft_simplified_hash_print(t_hash *hashmap);
 void			*ft_hmap_getdata(t_hash *hashmap, char *key);
 int				ft_hmap_remove(t_hash *hashmap, char *key, void (*del)(void *));
 int				ft_hmap_insert(t_hash *hashmap, char *key, void *data);

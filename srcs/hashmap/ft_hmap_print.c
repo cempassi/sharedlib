@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_hmap_print.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skuppers <skuppers@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/26 12:03:12 by skuppers          #+#    #+#             */
-/*   Updated: 2019/05/07 16:16:35 by skuppers         ###   ########.fr       */
+/*   Updated: 2019/06/04 14:11:25 by nrechati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,32 @@ void			ft_print_hashmap(t_hash *hashmap)
 				ptr = ptr->next;
 			}
 			ft_printf(" NULL\n");
+		}
+	}
+}
+
+void			ft_simplified_hash_print(t_hash *hashmap)
+{
+	size_t		i;
+	t_list		*ptr;
+
+	i = -1;
+	if (hashmap->used == 0)
+		return ;
+	ft_printf("hits\tbin\tpath\n");
+	while (++i < hashmap->map_size)
+	{
+		if (hashmap->map[i] != NULL)
+		{
+			ptr = hashmap->map[i];
+			while (ptr != NULL)
+			{
+				ft_printf("%*d\t%-*s\t%s\n"
+				, 4, ((t_hnode*)ptr->data)->hits
+				, hashmap->print_pad, ((t_hnode*)ptr->data)->key
+				, ((t_hnode*)ptr->data)->data);
+				ptr = ptr->next;
+			}
 		}
 	}
 }
