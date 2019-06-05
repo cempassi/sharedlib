@@ -1,4 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   vct_insert_string.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skuppers <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/05 09:35:01 by skuppers          #+#    #+#             */
+/*   Updated: 2019/06/05 09:37:07 by skuppers         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "vector.h"
+
+/*
+**	Inserts the string `str` into the specified vector,
+**	starting at the index `index`.
+**	Shifting the following characters and reallocates if neccesary.
+**	Returns 0 on success or -1 if index is bigger than the vector length.
+*/
 
 int8_t       vct_insert_string(t_vector *vector,
                     char *str, uint64_t index)
