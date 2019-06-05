@@ -6,7 +6,7 @@
 /*   By: ffoissey <ffoissey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/17 21:17:56 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/05/06 20:56:47 by ffoissey         ###   ########.fr       */
+/*   Updated: 2019/06/05 15:30:09 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int					ft_lstcmp(t_list *lst1, t_list *lst2,\
 t_list				*ft_getargslst(int ac, char **av);
 int					ft_stckpush(t_stack *stack, void *data, size_t size);
 void				*ft_stckpop(t_stack *stack);
+t_list				*ft_stckpopnode(t_stack *stack);
 size_t				ft_stcksize(t_stack *stack);
 void				ft_stckinit(t_stack *stack);
 void				*ft_stcktop(t_stack *stack);

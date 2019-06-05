@@ -6,7 +6,7 @@
 #    By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/17 23:46:04 by ffoissey          #+#    #+#              #
-#    Updated: 2019/06/04 17:06:43 by nrechati         ###   ########.fr        #
+#    Updated: 2019/06/05 15:30:29 by cempassi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -151,6 +151,7 @@ SRCS += ft_lstfilter.c
 SRCS += ft_lstremove_if.c
 SRCS += ft_tabtolst.c
 SRCS += ft_stckpop.c
+SRCS += ft_stckpopnode.c
 SRCS += ft_stckpush.c
 SRCS += ft_stckinit.c
 SRCS += ft_stckdestroy.c
