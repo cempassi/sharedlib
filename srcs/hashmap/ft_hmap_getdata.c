@@ -6,7 +6,7 @@
 /*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/26 11:54:44 by skuppers          #+#    #+#             */
-/*   Updated: 2019/05/29 18:41:26 by nrechati         ###   ########.fr       */
+/*   Updated: 2019/06/05 10:10:23 by nrechati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_hmap_getdata(t_hash *hashmap, char *key)
 	t_list		*ptr;
 	t_hnode		*node;
 
+	if (hashmap == NULL || key == NULL)
+		return (0);
 	hash = ft_hash_str(key, hashmap->map_size);
 	if (!(ptr = hashmap->map[hash]))
 		return (0);
