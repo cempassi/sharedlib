@@ -3,34 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ffoissey <ffoissey@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cempassi <cempassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/12 14:04:04 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/01/17 14:41:17 by ffoissey         ###   ########.fr       */
+/*   Created: 2018/11/12 14:04:04 by cempassi          #+#    #+#             */
+/*   Updated: 2019/06/06 16:34:34 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-static void	mapper(t_list *previous, t_list *current, t_list *lst, t_list *(*f)\
-		(t_list *elem))
+int		mapper(t_list *lst, t_list **map, t_lstmod func, t_del del)
 {
-	if (lst)
+	t_list	*node;
+
+	node = NULL;
+	if (!lst)
+		return (0);
+	if (func)
 	{
-		current = f(ft_lstnew(lst->data, lst->data_size));
-		previous->next = current;
-		mapper(current, NULL, lst->next, f);
+		if ((node = func(lst->data)) == NULL)
+		{
+			ft_lstdel(map, del);
+			return (-1);
+		}
 	}
-	else
-		previous->next = NULL;
+	ft_lstaddback(map, node);
+	return (mapper(lst->next, map, func, del));
 }
 
-t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+t_list	*ft_lstmap(t_list *lst, t_lstmod func, t_del del)
 {
 	t_list	*map;
 
-	if (!(map = f(ft_lstnew(lst->data, lst->data_size))))
-		return (NULL);
-	mapper(map, NULL, lst->next, f);
-	return (map);
+	map = NULL;
+	return (mapper(lst, &map, func, del) ? NULL : map);
 }
