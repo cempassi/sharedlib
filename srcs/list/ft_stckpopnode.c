@@ -6,7 +6,7 @@
 /*   By: skuppers <skuppers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/25 17:57:29 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/06/05 15:29:20 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/06/05 15:58:35 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ t_list	*ft_stckpopnode(t_stack *stack)
 	holder = stack->head;
 	stack->head = stack->head->next;
 	holder->next = NULL;
+	--stack->size;
 	return (holder);
 }
