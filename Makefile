@@ -6,7 +6,7 @@
 #    By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/17 23:46:04 by ffoissey          #+#    #+#              #
-#    Updated: 2019/06/05 15:30:29 by cempassi         ###   ########.fr        #
+#    Updated: 2019/06/06 16:41:59 by cempassi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -160,6 +160,7 @@ SRCS += ft_stcktop.c
 SRCS += ft_lstcmp.c
 SRCS += ft_lsttotab.c
 SRCS += ft_lstdelfirst.c
+SRCS += ft_lstsplit_if.c
 
 #--------------------Output----------------------#
 SRCS += ft_putchar.c
