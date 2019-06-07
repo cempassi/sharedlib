@@ -6,7 +6,7 @@
 #    By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/17 23:46:04 by ffoissey          #+#    #+#              #
-#    Updated: 2019/06/06 16:41:59 by cempassi         ###   ########.fr        #
+#    Updated: 2019/06/07 11:01:18 by nrechati         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -140,6 +140,7 @@ SRCS += ft_lstdelone.c
 SRCS += ft_lstdelnext.c
 SRCS += ft_lstdel.c
 SRCS += ft_lstiter.c
+SRCS += ft_lstiter_ctx.c
 SRCS += ft_lstmap.c
 SRCS += ft_lstnew.c
 SRCS += ft_lstrev.c
