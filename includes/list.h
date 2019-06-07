@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ffoissey <ffoissey@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/17 21:17:56 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/06/07 13:42:32 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/06/07 13:50:43 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,9 @@ void				ft_lstdelnext(t_list *current, void f(void *));
 void				*ft_lstdel(t_list **alst, void (*del)(void *));
 int					ft_lstdelfirst(t_list **alst, void (*del)(void *));
 void				ft_lstadd(t_list **alst, t_list *new);
-void				ft_lstiter(t_list *lst, void (*f)(void *elem));
+void				ft_lstiter(t_list *lst, void (*f)(void *data));
+void				ft_lstiter_ctx(t_list *lst, void *context
+							, void (*f)(void *context, void *data));
 size_t				ft_lstlen(t_list *lst);
 t_list				*ft_lstmap(t_list *lst, t_lstmod func, t_del del);
 t_list				*ft_lstmerge(t_list **alst, t_list *blst);
