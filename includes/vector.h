@@ -15,6 +15,14 @@ typedef struct      s_vector
     uint16_t        scale;
 }                   t_vector;
 
+typedef struct		s_magic
+{
+	unsigned long int	lw;
+	unsigned long int	hi;
+	unsigned long int	lo;
+
+}					t_magic;
+
 void                vct_del(t_vector **vector);
 t_vector            *vct_new(uint64_t size);
 int8_t              vct_reset(t_vector *vector);
