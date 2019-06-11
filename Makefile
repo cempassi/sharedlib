@@ -6,7 +6,7 @@
 #    By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/17 23:46:04 by ffoissey          #+#    #+#              #
-#    Updated: 2019/06/07 16:24:00 by cempassi         ###   ########.fr        #
+#    Updated: 2019/06/11 11:59:02 by skuppers         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,7 @@ INCS += list.h
 INCS += test.h
 INCS += other.h
 INCS += hashmap.h
+INCS += vector.h
 
 #--------------------Memory--------------------#
 SRCS += ft_bzero.c
@@ -69,11 +70,38 @@ SRCS += ft_flush_memory.c
 SRCS += ft_tool_malloc.c
 SRCS += ft_head_memory.c
 
+#--------------------Vectors---------------------#
+SRCS += vct_new.c
+SRCS += vct_len.c
+SRCS += vct_size.c
+SRCS += vct_reset.c
+SRCS += vct_set_scale.c
+SRCS += vct_scale.c
+SRCS += vct_resize.c
+SRCS += vct_getstring.c
+SRCS += vct_sub.c
+SRCS += vct_getcopy.c
+SRCS += vct_ncpy.c
+SRCS += vct_ncat.c
+SRCS += vct_insert_char.c
+SRCS += vct_delchar.c
+SRCS += vct_insert_string.c
+SRCS += vct_del_string.c	 
+SRCS += vct_replace_char.c
+SRCS += vct_replace_string.c
+SRCS += vct_add.c
+SRCS += vct_push.c
+SRCS += vct_pop.c
+SRCS += vct_cut.c
+SRCS += vct_del.c
+SRCS += vct_scpy.c
+SRCS += vct_scat.c
+SRCS += vct_shift_tool.c
+SRCS += vct_dups.c
+SRCS += vct_dup.c
+SRCS += vct_charat.c
+
 #--------------------Strings---------------------#
-SRCS += ft_vctreset.c
-SRCS += ft_vctrescale.c
-SRCS += ft_vctlen.c
-SRCS += ft_vctnew.c
 SRCS += ft_strbeginswith.c
 SRCS += ft_strendswith.c
 SRCS += ft_isnumeric.c
@@ -237,6 +265,7 @@ vpath %.c srcs/string
 vpath %.c srcs/tab
 vpath %.c srcs/test
 vpath %.c srcs/hashmap
+vpath %.c srcs/vector
 vpath %.h includes
 
 all : $(PATHO) $(NAME)
