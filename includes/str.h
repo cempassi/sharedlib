@@ -15,6 +15,14 @@
 # include <string.h>
 # define VECTOR_BUFFER_SIZE 16
 
+typedef struct		s_magic
+{
+	unsigned long int	lw;
+	unsigned long int	hi;
+	unsigned long int	lo;
+
+}					t_magic;
+
 typedef struct		s_file
 {
 	int				fd;
