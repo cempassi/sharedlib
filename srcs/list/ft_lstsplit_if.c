@@ -6,7 +6,7 @@
 /*   By: cempassi <cempassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/28 07:17:47 by cempassi          #+#    #+#             */
-/*   Updated: 2019/06/06 16:29:25 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/06/11 18:26:59 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ t_list			*ft_lstsplit_if(t_list **lst, void *data, t_cmp cmp)
 	if (!lst || !*lst || !cmp)
 		return (NULL);
 	new = NULL;
-	while ((*lst) && cmp((*lst)->data, data))
+	while ((*lst) && cmp(data, (*lst)->data))
 	{
 		holder = (*lst);
 		*lst = (*lst)->next;

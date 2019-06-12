@@ -6,7 +6,7 @@
 /*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/17 21:17:56 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/06/07 13:50:43 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/06/11 15:56:45 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <string.h>
 
 typedef void		*(*t_lstmod)(void *);
+typedef void		*(*t_lstmap)(void *, void *);
 typedef int			(*t_cmp)(void *, void *);
 typedef void		(*t_del)(void *);
 
@@ -42,7 +43,7 @@ void				ft_lstiter(t_list *lst, void (*f)(void *data));
 void				ft_lstiter_ctx(t_list *lst, void *context
 							, void (*f)(void *context, void *data));
 size_t				ft_lstlen(t_list *lst);
-t_list				*ft_lstmap(t_list *lst, t_lstmod func, t_del del);
+t_list				*ft_lstmap(t_list *lst, void *context, t_lstmap func, t_del del);
 t_list				*ft_lstmerge(t_list **alst, t_list *blst);
 void				ft_lstrev(t_list **alst);
 int					ft_lstaddback(t_list **alst, t_list *new);
