@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsplit_if.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cempassi <cempassi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/28 07:17:47 by cempassi          #+#    #+#             */
-/*   Updated: 2019/06/11 18:26:59 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/06/12 14:39:26 by nrechati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ t_list			*ft_lstsplit_if(t_list **lst, void *data, t_cmp cmp)
 		holder->next = NULL;
 		ft_lstaddback(&new, holder);
 	}
-	if ((*lst)->next)
+	if (*lst && (*lst)->next)
 		(*lst)->next = spliter((*lst)->next, &new, data, cmp);
 	return (new);
 }
