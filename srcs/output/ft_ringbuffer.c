@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ringbuffer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ffoissey <ffoissey@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 17:08:37 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/01/17 20:37:54 by ffoissey         ###   ########.fr       */
+/*   Updated: 2019/06/13 17:11:49 by nrechati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ static int		ft_ringflush(t_buffer *ring, int fd)
 {
 	int				output;
 
-	output = ft_putstr_fd(&ring->buffer[ring->index], fd);
+	if((output = ft_putstr_fd(&ring->buffer[ring->index], fd)) == -1)
+		output = ft_strlen(&ring->buffer[ring->index]);
 	ring->index += output;
 	if (ring->index >= BUFF_SIZE - 1)
 	{
