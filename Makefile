@@ -49,6 +49,7 @@ INCS += test.h
 INCS += other.h
 INCS += hashmap.h
 INCS += vector.h
+INCS += get_next_line.h
 
 #--------------------Memory--------------------#
 SRCS += ft_bzero.c
@@ -241,6 +242,9 @@ SRCS += ft_dirlist.c
 SRCS += ft_dirdel.c
 SRCS += ft_checkstat.c
 
+#------------------get_next_line------------------#
+SRCS += get_next_line.c
+
 DSYM += $(NAME).dSYM
 DSYM += $(DBNAME).dSYM
 
@@ -254,6 +258,7 @@ IFLAGS = -I$(PATHI)
 CFLAGS = $(WFLAGS)
 
 vpath %.c srcs/conversion
+vpath %.c srcs/get_next_line
 vpath %.c srcs/garbage_collector
 vpath %.c srcs/directory
 vpath %.c srcs/ft_printf

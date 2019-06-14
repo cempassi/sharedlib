@@ -27,6 +27,7 @@
 # include "other.h"
 # include "hashmap.h"
 # include "vector.h"
+# include "get_next_line.h"
 
 void				ft_freetab(char ***t);
 char				**ft_getargstab(int ac, char **av);
