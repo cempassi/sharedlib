@@ -6,14 +6,14 @@
 /*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/28 07:17:47 by cempassi          #+#    #+#             */
-/*   Updated: 2019/06/12 14:39:26 by nrechati         ###   ########.fr       */
+/*   Updated: 2019/06/14 14:56:41 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 static t_list		*spliter(t_list *current, t_list **new,\
-							void *data, t_cmp cmp)
+							void *context, t_cmp cmp)
 {
 	t_list		*old;
 	t_list		*tmp;
@@ -24,7 +24,7 @@ static t_list		*spliter(t_list *current, t_list **new,\
 		tmp = current;
 		current = current->next;
 		tmp->next = NULL;
-		if (cmp(tmp->data, data))
+		if (cmp(context, tmp->data))
 			ft_lstaddback(new, tmp);
 		else
 			ft_lstaddback(&old, tmp);
@@ -32,7 +32,7 @@ static t_list		*spliter(t_list *current, t_list **new,\
 	return (old);
 }
 
-t_list			*ft_lstsplit_if(t_list **lst, void *data, t_cmp cmp)
+t_list			*ft_lstsplit_if(t_list **lst, void *context, t_cmp cmp)
 {
 	t_list		*new;
 	t_list		*holder;
@@ -40,7 +40,7 @@ t_list			*ft_lstsplit_if(t_list **lst, void *data, t_cmp cmp)
 	if (!lst || !*lst || !cmp)
 		return (NULL);
 	new = NULL;
-	while ((*lst) && cmp(data, (*lst)->data))
+	while ((*lst) && cmp(context, (*lst)->data))
 	{
 		holder = (*lst);
 		*lst = (*lst)->next;
@@ -48,6 +48,6 @@ t_list			*ft_lstsplit_if(t_list **lst, void *data, t_cmp cmp)
 		ft_lstaddback(&new, holder);
 	}
 	if (*lst && (*lst)->next)
-		(*lst)->next = spliter((*lst)->next, &new, data, cmp);
+		(*lst)->next = spliter((*lst)->next, &new, context, cmp);
 	return (new);
 }
