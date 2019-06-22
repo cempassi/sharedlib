@@ -25,10 +25,12 @@ typedef	struct s_meminfo
 {
 	void		*addr;
 	size_t		size;
+	size_t		stack_size;
+	char		**stack_fct;
 	const char	*function;
 	const char	*file;
-	int			line;
 	char		time[23];
+	int			line;
 }				t_meminfo;
 
 void	*ft_malloc_up(size_t size, const char *function_name, const char *file,

@@ -32,15 +32,24 @@ static uint8_t		ft_ptr_ascii(unsigned char *s, size_t size)
 	return (1);
 }
 
+static void		ft_print_stack_functions(char **stack, size_t size)
+{
+	size_t		i;
+
+	i= 0;
+	printf("--> \033[32mStack\t :\033[0m");
+	printf("%s\n", stack[i++]);
+	while (i < size)
+		printf("\t\t  %s\n", stack[i++]);
+	ft_printf("\n");
+}
+
 static void		ft_print_memory_debug(t_meminfo *meminfo)
 {	
 	printf("\033[31m\nMemory leak at address %p:\n\033[0m", meminfo->addr);
 	printf("--> \033[36mTime\t : %s\033[0m", meminfo->time);
 	printf("--> \033[36mSize\t : %zu byte%s\033[0m", meminfo->size,
 					meminfo->size == 1 ? "\n" : "s\n");
-	printf("--> \033[32mFrom function: %s\033[0m\n", meminfo->function);
-	printf("--> \033[32mFrom file\t : %s\033[0m\n", meminfo->file);
-	printf("--> \033[32mAt line\t : %d\033[0m\n", meminfo->line);
 	if (ft_ptr_ascii((unsigned char *)meminfo->addr, meminfo->size) == 1)
 	{
 		printf("--> \033[34mContent Type : Probably a string\n\033[0m");
@@ -48,7 +57,11 @@ static void		ft_print_memory_debug(t_meminfo *meminfo)
 	}
 	else
 		printf("--> \033[34mContent Type : Probably not a string\n");
+	printf("--> \033[32mFrom function: %s\033[0m\n", meminfo->function);
+	printf("--> \033[32mFrom file\t : %s\033[0m\n", meminfo->file);
+	printf("--> \033[32mAt line\t : %d\033[0m\n", meminfo->line);
 	printf("\033[0m");
+	ft_print_stack_functions(meminfo->stack_fct, meminfo->stack_size);
 }
 
 static void		ft_process_flush(t_list *lst, uint8_t opt, int *leaks)
@@ -64,6 +77,7 @@ static void		ft_process_flush(t_list *lst, uint8_t opt, int *leaks)
 				ft_print_memory_debug((t_meminfo *)(lst->data));
 			}
 			free(((t_meminfo *)(lst->data))->addr);
+			free(((t_meminfo *)(lst->data))->stack_fct);
 			free(lst->data);
 		}
 		lst->data = NULL;
