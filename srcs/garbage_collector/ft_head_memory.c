@@ -58,10 +58,10 @@ static void		ft_print_memory_debug(t_meminfo *meminfo)
 	if (ft_ptr_ascii((unsigned char *)meminfo->addr, meminfo->size) == 1)
 	{
 		printf("--> \033[34mContent Type : Probably a string\n\033[0m");
-		printf("--> \033[33mContent\t : '%s'\n", (char *)meminfo->addr);
+		printf("--> \033[33mContent\t : '%s'\n\033[0m", (char *)meminfo->addr);
 	}
 	else
-		printf("--> \033[34mContent Type : Probably not a string\n");
+		printf("--> \033[34mContent Type : Probably not a string\n\033[0m");
 	printf("--> \033[32mFrom function: %s\033[0m\n", meminfo->function);
 	printf("--> \033[32mFrom file\t : %s\033[0m\n", meminfo->file);
 	printf("--> \033[32mAt line\t : %d\033[0m\n", meminfo->line);
