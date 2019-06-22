@@ -22,11 +22,12 @@ static uint8_t		ft_ptr_ascii(unsigned char *s, size_t size)
 		return (0);
 	while (i < (size - 1))
 	{
-		if ((s[i] > 126 || s[i] < 32) && s[i] != '\t' && s[i] != '\n')
+		if ((s[i] > 126 || s[i] < 32) && s[i] != '\t' && s[i] != '\n'
+				&& s[i] != '\0')
 			return (0);
 		i++;
 	}
-	if (s[i] != 0)
+	if (s[i] != '\0')
 		return (0);
 	return (1);
 }
@@ -34,16 +35,19 @@ static uint8_t		ft_ptr_ascii(unsigned char *s, size_t size)
 static void		ft_print_memory_debug(t_meminfo *meminfo)
 {	
 	printf("\033[31m\nMemory leak at address %p:\n\033[0m", meminfo->addr);
-	printf("--> \033[36mTime\t: %s\033[0m", meminfo->time);
-	printf("--> \033[36mSize\t: %zu byte%s\033[0m", meminfo->size,
+	printf("--> \033[36mTime\t : %s\033[0m", meminfo->time);
+	printf("--> \033[36mSize\t : %zu byte%s\033[0m", meminfo->size,
 					meminfo->size == 1 ? "\n" : "s\n");
+	printf("--> \033[32mFrom function: %s\033[0m\n", meminfo->function);
+	printf("--> \033[32mFrom file\t : %s\033[0m\n", meminfo->file);
+	printf("--> \033[32mAt line\t : %d\033[0m\n", meminfo->line);
 	if (ft_ptr_ascii((unsigned char *)meminfo->addr, meminfo->size) == 1)
 	{
-		printf("--> \033[34mContent Type: Probably string\n\033[0m");
-		printf("--> \033[33mContent\t: '%s'\n", (char *)meminfo->addr);
+		printf("--> \033[34mContent Type : Probably a string\n\033[0m");
+		printf("--> \033[33mContent\t : '%s'\n", (char *)meminfo->addr);
 	}
 	else
-		printf("--> \033[34mContent Type: Not a string\n");
+		printf("--> \033[34mContent Type : Probably not a string\n");
 	printf("\033[0m");
 }
 
