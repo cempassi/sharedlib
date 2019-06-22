@@ -36,11 +36,16 @@ static void		ft_print_stack_functions(char **stack, size_t size)
 {
 	size_t		i;
 
-	i= 0;
-	printf("--> \033[32mStack\t :\033[0m");
-	printf("%s\n", stack[i++]);
-	while (i < size)
-		printf("\t\t  %s\n", stack[i++]);
+	printf("--> \033[32mStack fcts\t :\033[0m");
+	printf(" (%d): %s\n", 0, stack[0]);
+	i = 1;
+	while (i < size && i < 6)
+	{
+		printf("\t\t   (%zu): %s\n", i, stack[i]);
+		i++;
+	}
+	if (i < size)
+		printf("\t\t   (...)\n");
 	ft_printf("\n");
 }
 

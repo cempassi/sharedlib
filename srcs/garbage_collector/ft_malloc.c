@@ -44,7 +44,7 @@ void				*ft_malloc_up(size_t size, const char *function,
 	t_list				*head;
 	t_list				*lst_ptr;
 	t_meminfo			meminfo;
-	void				*array[30];
+	void				*array[20];
 	time_t				tm;
 
 	if (size == 0)
@@ -57,9 +57,8 @@ void				*ft_malloc_up(size_t size, const char *function,
 	meminfo.function = function;
 	meminfo.file = file;
 	meminfo.line = line;
-	meminfo.stack_size = backtrace(array, 30);
+	meminfo.stack_size = backtrace(array, 20);
 	meminfo.stack_fct = backtrace_symbols(array, meminfo.stack_size);
-	print_backtrace();
 	ft_bzero(&meminfo.time, 23);
 	strftime(meminfo.time, 23, "Allocated at %X\n", localtime(&tm));
 	ft_lstadd(&lst_ptr, ft_lstnew_malloc(&meminfo, sizeof(meminfo)));
