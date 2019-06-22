@@ -23,13 +23,13 @@ t_vector	*vct_new(uint64_t size)
 	t_vector	*new;
 	char		*buffer;
 
-	if (!(new = malloc(sizeof(t_vector))))
+	if (!(new = ft_malloc(sizeof(t_vector))))
 		return (NULL);
 	if (size > 0)
 	{
 		if (!(buffer = ft_strnew(size)))
 		{
-			free(new);
+			ft_free(new);
 			return (NULL);
 		}
 		new->size = size;
@@ -38,7 +38,7 @@ t_vector	*vct_new(uint64_t size)
 	{
 		if (!(buffer = ft_strnew(DEFAULT_VECTOR_SIZE)))
 		{
-			free(new);
+			ft_free(new);
 			return (NULL);
 		}
 		new->size = DEFAULT_VECTOR_SIZE;
