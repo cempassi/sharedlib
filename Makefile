@@ -64,11 +64,8 @@ SRCS += ft_memset.c
 
 #---------------Garbage Collector----------------#
 SRCS += ft_malloc.c
-SRCS += ft_calloc.c
-SRCS += ft_realloc.c
 SRCS += ft_free.c
 SRCS += ft_flush_memory.c
-SRCS += ft_tool_malloc.c
 SRCS += ft_head_memory.c
 
 #--------------------Vectors---------------------#

@@ -17,7 +17,7 @@ static void	ft_process_free(t_list **lst, void *ptr)
 	t_list		*tmp;
 	t_list		*run;
 
-	if ((*lst)->data == ptr)
+	if (((t_meminfo *)((*lst)->data))->addr == ptr)
 	{
 		tmp = (*lst)->next;
 		free(ptr);
@@ -29,7 +29,7 @@ static void	ft_process_free(t_list **lst, void *ptr)
 	tmp = run;
 	while (run != NULL)
 	{
-		if (run->data == ptr)
+		if (((t_meminfo *)(run->data))->addr == ptr)
 		{
 			free(ptr);
 			tmp->next = tmp->next->next;

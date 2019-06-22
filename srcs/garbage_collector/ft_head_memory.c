@@ -11,33 +11,81 @@
 /* ************************************************************************** */
 
 #include "ft_malloc.h"
+#include <stdio.h>
 
-static void		ft_process_flush(t_list *lst)
+static uint8_t		ft_ptr_ascii(unsigned char *s, size_t size)
+{
+	size_t	i;
+
+	i = 0;
+	if (s == NULL)
+		return (0);
+	while (i < (size - 1))
+	{
+		if ((s[i] > 126 || s[i] < 32) && s[i] != '\t' && s[i] != '\n')
+			return (0);
+		i++;
+	}
+	if (s[i] != 0)
+		return (0);
+	return (1);
+}
+
+static void		ft_print_memory_debug(t_meminfo *meminfo)
+{	
+	printf("\033[31m\nMemory leak at address %p:\n\033[0m", meminfo->addr);
+	printf("--> \033[36mTime\t: %s\033[0m", meminfo->time);
+	printf("--> \033[36mSize\t: %zu byte%s\033[0m", meminfo->size,
+					meminfo->size == 1 ? "\n" : "s\n");
+	if (ft_ptr_ascii((unsigned char *)meminfo->addr, meminfo->size) == 1)
+	{
+		printf("--> \033[34mContent Type: Probably string\n\033[0m");
+		printf("--> \033[33mContent\t: '%s'\n", (char *)meminfo->addr);
+	}
+	else
+		printf("--> \033[34mContent Type: Not a string\n");
+	printf("\033[0m");
+}
+
+static void		ft_process_flush(t_list *lst, uint8_t opt, int *leaks)
 {
 	if (lst)
 	{
-		ft_process_flush(lst->next);
-		free(lst->data);
+		ft_process_flush(lst->next, opt, leaks);
+		if (lst->data != NULL)
+		{
+			if (opt & PRINT)
+			{
+				(*leaks)++;
+				ft_print_memory_debug((t_meminfo *)(lst->data));
+			}
+			free(((t_meminfo *)(lst->data))->addr);
+			free(lst->data);
+		}
 		lst->data = NULL;
 		free(lst);
 		lst = NULL;
 	}
 }
 
-void			*ft_get_head_list_allocation(int flush)
+void			*ft_get_head_list_allocation(uint8_t opt)
 {
 	static t_list	*head = NULL;
+	int				leaks;
 
+	leaks = 0;
 	if (head == NULL)
 	{
 		head = malloc(sizeof(t_list));
 		head->data = NULL;
 	}
-	if (flush == FLUSH_MEMORY)
+	if (opt & FLUSH_MEMORY)
 	{
-		ft_process_flush(head->data);
+		ft_process_flush(head->data, opt, &leaks);
 		free(head);
 		head = NULL;
+		if ((opt & PRINT) && leaks == 0)
+			ft_putendl_fd("\033[32mThere is no memory leak\033[0m", 2);
 	}
 	return (head);
 }

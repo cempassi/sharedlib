@@ -12,7 +12,8 @@
 
 #include "ft_malloc.h"
 
-void		ft_flush_memory(void)
+void		ft_flush_memory(uint8_t opt)
 {
-	ft_get_head_list_allocation(FLUSH_MEMORY);
+	(void)opt;
+	ft_get_head_list_allocation(FLUSH_MEMORY | opt);
 }

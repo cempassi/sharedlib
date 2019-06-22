@@ -14,15 +14,21 @@
 # define FT_MALLOC_H
 
 # include "libft.h"
-# define GET_HEAD		0
-# define FLUSH_MEMORY	1
+# define GET_HEAD		0x01
+# define FLUSH_MEMORY	0x02
+# define PRINT			0x04
+# define SILENCE		0x08
+
+typedef	struct s_meminfo
+{
+	void	*addr;
+	size_t	size;
+	char	time[23];
+}				t_meminfo;
 
 void	*ft_malloc(size_t size);
-void	*ft_calloc(size_t size);
-void	*ft_realloc(void *old_ptr, size_t size);
 void	ft_free(void *ptr);
-void	ft_flush_memory(void);
-void	*ft_get_head_list_allocation(int flush);
-t_list	*ft_lstnew_no_malloc(unsigned char **data);
+void	ft_flush_memory(uint8_t opt);
+void	*ft_get_head_list_allocation(uint8_t opt);
 
 #endif
