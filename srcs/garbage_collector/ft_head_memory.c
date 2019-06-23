@@ -118,9 +118,10 @@ void			*ft_get_head_list_allocation(uint8_t opt)
 		free(head);
 		head = NULL;
 		if ((opt & PRINT) && leaks == 0)
-			ft_putendl_fd("\033[32mThere is no memory leak\033[0m", 2);
+			dprintf(2, "\033[32m   ### No memory leak found ! ###\n\n\033[0m");
 		else if (opt & PRINT)
-			dprintf(2, "\033[31m%d leak(s) found !\033[0m", leaks);
+			dprintf(2, "\033[31m   ### %d leak(s) found ! ###\n\n\033[0m",
+					leaks);
 	}
 	return (head);
 }
