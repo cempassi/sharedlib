@@ -29,6 +29,12 @@
 # include "vector.h"
 # include "get_next_line.h"
 
+/*
+** DISABLED GARBAGE COLLECTOR :
+	# define ft_free free
+	# define ft_malloc malloc
+*/
+
 void				ft_freetab(char ***t);
 char				**ft_getargstab(int ac, char **av);
 void				ft_showtab(char **t);
