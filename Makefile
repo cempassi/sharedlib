@@ -12,7 +12,7 @@
 
 CC = clang
 COMPILE = $(CC) -c
-DEBUG = $(CC) -g -c
+DEBUG = $(CC) -g3 -c
 
 # Reset
 NC = \033[0m
@@ -253,6 +253,10 @@ WFLAGS += -Werror
 WFLAGS += -Wextra
 IFLAGS = -I$(PATHI)
 CFLAGS = $(WFLAGS)
+GC ?= 1
+ifneq ($(GC), 0)
+	CFLAGS += -D GC
+endif
 
 vpath %.c srcs/conversion
 vpath %.c srcs/get_next_line
@@ -311,4 +315,4 @@ fclean: clean cleandb
 re : fclean all
 
 .PHONY: all clean fclean debug cleandb
-.SILENT:
+#.SILENT:

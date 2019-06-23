@@ -19,10 +19,11 @@
 # define PRINT			0x04
 # define SILENCE		0x08
 
-# ifndef ft_malloc
-#  ifndef ft_free
+# ifdef GC
 #   define ft_malloc(x)	ft_malloc_up(x, __func__, __FILE__, __LINE__)
-#  endif
+# else
+#  define ft_free free
+#  define ft_malloc malloc
 # endif
 
 typedef	struct s_meminfo

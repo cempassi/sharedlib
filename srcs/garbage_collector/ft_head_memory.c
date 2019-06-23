@@ -13,7 +13,7 @@
 #include "ft_malloc.h"
 #include <stdio.h>
 
-static uint8_t		ft_ptr_ascii(unsigned char *s, size_t size)
+uint8_t		ft_ptr_ascii(unsigned char *s, size_t size)
 {
 	size_t	i;
 
@@ -33,7 +33,7 @@ static uint8_t		ft_ptr_ascii(unsigned char *s, size_t size)
 	return (1);
 }
 
-static void		ft_print_stack_functions(char **stack, size_t size)
+void		ft_print_stack_functions(char **stack, size_t size)
 {
 	size_t		i;
 	char		*tmp;
@@ -63,7 +63,7 @@ static void		ft_print_stack_functions(char **stack, size_t size)
 	ft_dprintf(2, "\n");
 }
 
-static void		ft_print_memory_debug(t_meminfo *meminfo)
+void		ft_print_memory_debug(t_meminfo *meminfo)
 {	
 	dprintf(2, "\033[31m\nMemory leak at address %p:\n\033[0m", meminfo->addr);
 	dprintf(2, "--> \033[36mTime\t : %s\033[0m", meminfo->time);
@@ -84,7 +84,7 @@ static void		ft_print_memory_debug(t_meminfo *meminfo)
 	ft_print_stack_functions(meminfo->stack_fct, meminfo->stack_size);
 }
 
-static void		ft_process_flush(t_list *lst, uint8_t opt, int *leaks)
+void		ft_process_flush(t_list *lst, uint8_t opt, int *leaks)
 {
 	if (lst)
 	{
@@ -101,17 +101,19 @@ static void		ft_process_flush(t_list *lst, uint8_t opt, int *leaks)
 	}
 }
 
-void			*ft_get_head_list_allocation(uint8_t opt)
+void		*ft_get_head_list_allocation(uint8_t opt)
 {
 	static t_list	*head = NULL;
 	int				leaks;
 
 	leaks = 0;
+	(void)opt;
 	if (head == NULL)
 	{
 		head = malloc(sizeof(t_list));
 		head->data = NULL;
 	}
+	#ifdef GC
 	if (opt & FLUSH_MEMORY)
 	{
 		ft_process_flush(head->data, opt, &leaks);
@@ -123,5 +125,6 @@ void			*ft_get_head_list_allocation(uint8_t opt)
 			dprintf(2, "\033[31m   ### %d leak(s) found ! ###\n\n\033[0m",
 					leaks);
 	}
+	#endif
 	return (head);
 }
