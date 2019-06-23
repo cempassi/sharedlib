@@ -12,28 +12,34 @@
 
 #include "ft_malloc.h"
 
+void	del_meminfo(t_list **lst)
+{
+	t_meminfo *meminfo;
+
+	meminfo = (t_meminfo *)((*lst)->data);
+	free(meminfo->addr);
+	free(meminfo->stack_fct);
+	free(meminfo);
+	free(*lst);
+	*lst = NULL;
+}
+
 static void	ft_process_free(t_list **lst, void *ptr)
 {
-	t_list		*tmp;
-	t_list		*run;
+	t_list	*run;
+	t_list	*tmp;
 
-	if (((t_meminfo *)((*lst)->data))->addr == ptr)
-	{
-		tmp = (*lst)->next;
-		free(ptr);
-		free(*lst);
-		*lst = tmp;
-		return ;
-	}
 	run = *lst;
-	tmp = run;
+	tmp = *lst;
 	while (run != NULL)
 	{
-		if (((t_meminfo *)(run->data))->addr == ptr)
+		if (run && (run->data) && ((t_meminfo *)((run)->data))->addr == ptr)
 		{
-			free(ptr);
-			tmp->next = tmp->next->next;
-			free(run);
+			if (run == *lst)
+				*lst = (*lst)->next;
+			else
+				tmp->next = run->next;
+			del_meminfo(&run);
 			return ;
 		}
 		tmp = run;

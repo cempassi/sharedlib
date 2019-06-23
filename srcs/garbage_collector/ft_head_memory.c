@@ -96,13 +96,8 @@ static void		ft_process_flush(t_list *lst, uint8_t opt, int *leaks)
 				(*leaks)++;
 				ft_print_memory_debug((t_meminfo *)(lst->data));
 			}
-			free(((t_meminfo *)(lst->data))->addr);
-			free(((t_meminfo *)(lst->data))->stack_fct);
-			free(lst->data);
 		}
-		lst->data = NULL;
-		free(lst);
-		lst = NULL;
+		del_meminfo(&lst);
 	}
 }
 
@@ -124,6 +119,8 @@ void			*ft_get_head_list_allocation(uint8_t opt)
 		head = NULL;
 		if ((opt & PRINT) && leaks == 0)
 			ft_putendl_fd("\033[32mThere is no memory leak\033[0m", 2);
+		else if (opt & PRINT)
+			dprintf(2, "\033[31m%d leak(s) found !\033[0m", leaks);
 	}
 	return (head);
 }

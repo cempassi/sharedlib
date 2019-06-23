@@ -37,6 +37,7 @@ typedef	struct s_meminfo
 	int			line;
 }				t_meminfo;
 
+void	del_meminfo(t_list **lst);
 void	*ft_malloc_up(size_t size, const char *function_name, const char *file,
 					const int line);
 void	ft_free(void *ptr);
