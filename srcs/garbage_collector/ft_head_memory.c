@@ -35,17 +35,25 @@ static uint8_t		ft_ptr_ascii(unsigned char *s, size_t size)
 static void		ft_print_stack_functions(char **stack, size_t size)
 {
 	size_t		i;
+	char		*tmp;
 
-	printf("--> \033[32mStack fcts\t :\033[0m");
-	printf(" (%d): %s\n", 0, stack[0]);
+	if (size == 1)
+		return ;
+	printf("--> \033[32m|  Stack state at the time of allocation   |\033[0m\n");
+	printf("    --------------------------------------------\n");
 	i = 1;
-	while (i < size && i < 6)
+	while (i < size && i < 20)
 	{
-		printf("\t\t   (%zu): %s\n", i, stack[i]);
+		if ((tmp = ft_strstr(stack[i], "0x")) != NULL)
+			tmp = ft_strchr(tmp, ' ');
+		if (tmp != NULL)
+			printf("    (%zu): %s\n", i - 1, tmp + 1);
+		else
+			printf("    (%zu): %s\n", i - 1, stack[i]);
+		if (ft_strstr(stack[i], " main ") != NULL)
+			break ;
 		i++;
 	}
-	if (i < size)
-		printf("\t\t   (...)\n");
 	ft_printf("\n");
 }
 
@@ -57,7 +65,7 @@ static void		ft_print_memory_debug(t_meminfo *meminfo)
 					meminfo->size == 1 ? "\n" : "s\n");
 	if (ft_ptr_ascii((unsigned char *)meminfo->addr, meminfo->size) == 1)
 	{
-		printf("--> \033[34mContent Type : Probably a string\n\033[0m");
+		printf("--> \033[33mContent Type : Probably a string\n\033[0m");
 		printf("--> \033[33mContent\t : '%s'\n\033[0m", (char *)meminfo->addr);
 	}
 	else
