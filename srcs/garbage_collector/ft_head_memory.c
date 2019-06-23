@@ -69,7 +69,7 @@ static void		ft_print_memory_debug(t_meminfo *meminfo)
 		printf("--> \033[33mContent\t : '%s'\n\033[0m", (char *)meminfo->addr);
 	}
 	else
-		printf("--> \033[34mContent Type : Probably not a string\n\033[0m");
+		printf("--> \033[33mContent Type : Probably not a string\n\033[0m");
 	printf("--> \033[32mFrom function: %s\033[0m\n", meminfo->function);
 	printf("--> \033[32mFrom file\t : %s\033[0m\n", meminfo->file);
 	printf("--> \033[32mAt line\t : %d\033[0m\n", meminfo->line);
