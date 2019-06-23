@@ -36,21 +36,26 @@ static void		ft_print_stack_functions(char **stack, size_t size)
 {
 	size_t		i;
 	char		*tmp;
+	char		*end;
 
 	if (size == 1)
 		return ;
-	printf("--> \033[32m|  Stack state at the time of allocation   |\033[0m\n");
-	printf("    --------------------------------------------\n");
+	printf("--> \033[32m|Stack state at the time of allocation|\033[0m\n");
+	printf("    ---------------------------------------\n");
 	i = 1;
 	while (i < size && i < 20)
 	{
 		if ((tmp = ft_strstr(stack[i], "0x")) != NULL)
 			tmp = ft_strchr(tmp, ' ');
 		if (tmp != NULL)
-			printf("    (%zu): %s\n", i - 1, tmp + 1);
+		{
+			if ((end = ft_strchr(++tmp, ' ')) != NULL)
+				*end = '\0';
+			printf("    (%02zu): %s\n", i - 1, tmp);
+		}
 		else
-			printf("    (%zu): %s\n", i - 1, stack[i]);
-		if (ft_strstr(stack[i], " main ") != NULL)
+			printf("    (%02zu): %s\n", i - 1, stack[i]);
+		if (ft_strstr(stack[i], " main") != NULL)
 			break ;
 		i++;
 	}
