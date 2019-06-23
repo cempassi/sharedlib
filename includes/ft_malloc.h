@@ -18,11 +18,13 @@
 # define FLUSH_MEMORY	0x02
 # define PRINT			0x04
 # define SILENCE		0x08
+
 # ifndef ft_malloc
 #  ifndef ft_free
 #   define ft_malloc(x)	ft_malloc_up(x, __func__, __FILE__, __LINE__)
 #  endif
 # endif
+
 typedef	struct s_meminfo
 {
 	void		*addr;

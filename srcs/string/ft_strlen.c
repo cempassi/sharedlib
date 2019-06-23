@@ -44,7 +44,6 @@ uint64_t				locate_eol(t_magic *magic,
 	int64_t	length;
 	const char	*cp;
 
-	length = 0;
 	while (1)
 	{
 		magic->lw = *lw_ptr++;

@@ -17,7 +17,6 @@ static long double	flag_create(t_format *format, char *flag)
 {
 	long double value;
 
-	value = 0;
 	if (ft_strequ(format->size, "l"))
 		value = format->arg.l_double;
 	else
@@ -53,8 +52,6 @@ static void			fill_float(t_format *format, char **tmp, long double value)
 	int		curr;
 	char	*holder;
 
-	prev = 0;
-	curr = 0;
 	i = -1;
 	while (++i < format->precision - 1)
 	{

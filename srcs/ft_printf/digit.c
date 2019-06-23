@@ -34,7 +34,6 @@ static long long	flag_create(t_format *format, char *flag)
 {
 	long long		value;
 
-	value = 0;
 	if (ft_strequ(format->size, "hh"))
 		value = format->arg.character;
 	else if (ft_strequ(format->size, "h"))
