@@ -29,6 +29,7 @@ static uint8_t		ft_ptr_ascii(unsigned char *s, size_t size)
 	}
 	if (s[i] != '\0')
 		return (0);
+	s[i] = '\0';
 	return (1);
 }
 
@@ -40,8 +41,8 @@ static void		ft_print_stack_functions(char **stack, size_t size)
 
 	if (size == 1)
 		return ;
-	printf("--> \033[32m|Stack state at the time of allocation|\033[0m\n");
-	printf("    ---------------------------------------\n");
+	dprintf(2, "--> \033[32m|Stack state at the time of allocation|\033[0m\n");
+	dprintf(2, "    ---------------------------------------\n");
 	i = 1;
 	while (i < size && i < 20)
 	{
@@ -51,34 +52,35 @@ static void		ft_print_stack_functions(char **stack, size_t size)
 		{
 			if ((end = ft_strchr(++tmp, ' ')) != NULL)
 				*end = '\0';
-			printf("    (%02zu): %s\n", i - 1, tmp);
+			dprintf(2, "    (%02zu): %s\n", i - 1, tmp);
 		}
 		else
-			printf("    (%02zu): %s\n", i - 1, stack[i]);
+			dprintf(2, "    (%02zu): %s\n", i - 1, stack[i]);
 		if (ft_strstr(stack[i], " main") != NULL)
 			break ;
 		i++;
 	}
-	ft_printf("\n");
+	ft_dprintf(2, "\n");
 }
 
 static void		ft_print_memory_debug(t_meminfo *meminfo)
 {	
-	printf("\033[31m\nMemory leak at address %p:\n\033[0m", meminfo->addr);
-	printf("--> \033[36mTime\t : %s\033[0m", meminfo->time);
-	printf("--> \033[36mSize\t : %zu byte%s\033[0m", meminfo->size,
+	dprintf(2, "\033[31m\nMemory leak at address %p:\n\033[0m", meminfo->addr);
+	dprintf(2, "--> \033[36mTime\t : %s\033[0m", meminfo->time);
+	dprintf(2, "--> \033[36mSize\t : %zu byte%s\033[0m", meminfo->size,
 					meminfo->size == 1 ? "\n" : "s\n");
 	if (ft_ptr_ascii((unsigned char *)meminfo->addr, meminfo->size) == 1)
 	{
-		printf("--> \033[33mContent Type : Probably a string\n\033[0m");
-		printf("--> \033[33mContent\t : '%s'\n\033[0m", (char *)meminfo->addr);
+		dprintf(2, "--> \033[33mContent Type : Probably a string\n\033[0m");
+		dprintf(2, "--> \033[33mContent\t : '%s'\n\033[0m",
+			(char *)meminfo->addr);
 	}
 	else
-		printf("--> \033[33mContent Type : Probably not a string\n\033[0m");
-	printf("--> \033[32mFrom function: %s\033[0m\n", meminfo->function);
-	printf("--> \033[32mFrom file\t : %s\033[0m\n", meminfo->file);
-	printf("--> \033[32mAt line\t : %d\033[0m\n", meminfo->line);
-	printf("\033[0m");
+		dprintf(2, "--> \033[33mContent Type : Probably not a string\n\033[0m");
+	dprintf(2, "--> \033[32mFrom function: %s\033[0m\n", meminfo->function);
+	dprintf(2, "--> \033[32mFrom file\t : %s\033[0m\n", meminfo->file);
+	dprintf(2, "--> \033[32mAt line\t : %d\033[0m\n", meminfo->line);
+	dprintf(2, "\033[0m");
 	ft_print_stack_functions(meminfo->stack_fct, meminfo->stack_size);
 }
 
