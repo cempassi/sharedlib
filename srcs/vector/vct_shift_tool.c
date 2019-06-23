@@ -28,7 +28,7 @@ void shift_nleft(t_vector *vector, uint64_t start, uint32_t offset)
 {
     uint64_t    vlen;
 
-    vlen = vct_len(vector);
+    vlen = vct_len(vector) - offset; // Invalid read of size : add  "- offset"
     while (start <= vlen)
     {
         vector->buffer[start] = vector->buffer[start + offset];
