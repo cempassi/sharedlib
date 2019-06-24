@@ -6,7 +6,7 @@
 #    By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/17 23:46:04 by ffoissey          #+#    #+#              #
-#    Updated: 2019/06/11 11:59:02 by skuppers         ###   ########.fr        #
+#    Updated: 2019/06/24 10:48:00 by ffoissey         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -315,4 +315,4 @@ fclean: clean cleandb
 re : fclean all
 
 .PHONY: all clean fclean debug cleandb
-#.SILENT:
+.SILENT:
