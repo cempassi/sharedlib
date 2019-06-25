@@ -6,7 +6,7 @@
 #    By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/17 23:46:04 by ffoissey          #+#    #+#              #
-#    Updated: 2019/06/24 10:48:00 by ffoissey         ###   ########.fr        #
+#    Updated: 2019/06/25 14:05:34 by nrechati         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,7 +84,7 @@ SRCS += vct_ncat.c
 SRCS += vct_insert_char.c
 SRCS += vct_delchar.c
 SRCS += vct_insert_string.c
-SRCS += vct_del_string.c	 
+SRCS += vct_del_string.c
 SRCS += vct_replace_char.c
 SRCS += vct_replace_string.c
 SRCS += vct_add.c
@@ -181,6 +181,7 @@ SRCS += ft_tabtolst.c
 SRCS += ft_stckpop.c
 SRCS += ft_stckpopnode.c
 SRCS += ft_stckpush.c
+SRCS += ft_stckpushnode.c
 SRCS += ft_stckinit.c
 SRCS += ft_stckdestroy.c
 SRCS += ft_stcksize.c
