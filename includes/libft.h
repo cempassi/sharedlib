@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ffoissey <ffoissey@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 21:55:01 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/06/07 16:23:20 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/06/25 10:44:39 by nrechati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 # define LIBFT_H
 # define BUFF_SIZE 4096
 # define BASE_MAX 66
+# define SUCCESS 0
+# define FAILURE -1
+# define TRUE 1
+# define FALSE 0
+
 # include <string.h>
 # include "ft_printf.h"
 # include "ft_malloc.h"
