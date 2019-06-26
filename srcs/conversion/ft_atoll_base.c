@@ -6,7 +6,7 @@
 /*   By: ffoissey <ffoissey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 20:47:23 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/01/17 14:41:17 by ffoissey         ###   ########.fr       */
+/*   Updated: 2019/06/26 07:01:51 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,5 @@ long long	ft_atoll_base(char *str, char *base)
 		ft_isdigit(*str) ? converter(str, base, baselen, &res)
 			: converter(str + 1, base, baselen, &res);
 	}
-	return (res);
+	return (str[0] == '-' ? -res : res);
 }
