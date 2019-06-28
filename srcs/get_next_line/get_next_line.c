@@ -12,6 +12,30 @@
 
 #include "get_next_line.h"
 
+static char	*ft_strjoin_protected(char const *s1, char const *s2)
+{
+	char	*s_new;
+	size_t	len_s1;
+	size_t	len_s2;
+
+	if (!s1 && !s2)
+		return (NULL);
+	if (!s1)
+		s_new = ft_strdup((char *)s2);
+	else if (!s2)
+		s_new = ft_strdup((char *)s1);
+	else
+	{
+		len_s1 = ft_strlen(s1);
+		len_s2 = ft_strlen(s2);
+		if (!(s_new = (char *)malloc(sizeof(char) * (len_s1 + len_s2 + 1))))
+			return (NULL);
+		ft_strncpy(s_new, s1, ft_strlen(s1));
+		ft_strcpy(s_new + ft_strlen(s1), s2);
+	}
+	return (s_new);
+}
+
 static void		ft_fill_line_with_rest(t_gnl_file *file)
 {
 	char	*tmp;
@@ -57,11 +81,11 @@ static int		ft_read(t_gnl_file *file)
 			file->state = 1;
 			file->rest = ft_strdup(tmp + 1);
 			buf[tmp - buf] = '\0';
-			file->cur = ft_strjoin(file->cur, buf);
+			file->cur = ft_strjoin_protected(file->cur, buf);
 			ft_strdel(&tmp_cur);
 			return (SUCCESS);
 		}
-		file->cur = ft_strjoin(file->cur, buf);
+		file->cur = ft_strjoin_protected(file->cur, buf);
 		ft_strdel(&tmp_cur);
 	}
 	if (file->cur && file->cur[0] != '\0')
