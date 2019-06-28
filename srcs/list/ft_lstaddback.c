@@ -12,6 +12,8 @@
 
 #include "list.h"
 
+#include "libft.h"
+
 int		ft_lstaddback(t_list **alst, t_list *new)
 {
 	t_list	*holder;

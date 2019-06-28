@@ -108,6 +108,7 @@ void		*ft_get_head_list_allocation(uint8_t opt)
 
 	leaks = 0;
 	(void)opt;
+	(void)leaks;
 	if (head == NULL)
 	{
 		head = malloc(sizeof(t_list));
