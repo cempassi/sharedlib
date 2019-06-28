@@ -27,10 +27,13 @@ void shift_nright(t_vector *vector, uint64_t start, uint32_t offset)
 void shift_nleft(t_vector *vector, uint64_t start, uint32_t offset)
 {
     uint64_t    vlen;
+	int			nb;
 
     vlen = vct_len(vector);
-	if (vlen > offset)
-		vlen -= offset;
+	nb = vlen - offset;
+	while (nb < 0 && offset > 0 )
+		offset--;
+	vlen -= offset;
     while (start <= vlen)
     {
         vector->buffer[start] = vector->buffer[start + offset];
