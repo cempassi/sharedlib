@@ -6,7 +6,7 @@
 /*   By: ffoissey <ffoissey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/23 21:57:33 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/04/23 22:04:39 by ffoissey         ###   ########.fr       */
+/*   Updated: 2019/06/30 08:13:11 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	**ft_lsttotab(t_list *lst, char *(*f)(void *))
 	size_t	index;
 
 	lstlen = ft_lstlen(lst);
-	result = ft_malloc(sizeof(char *) * (lstlen + 1));
+	result = malloc(sizeof(char *) * (lstlen + 1));
 	index = 0;
 	while (index < lstlen)
 	{

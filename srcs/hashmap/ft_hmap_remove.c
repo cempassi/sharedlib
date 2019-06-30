@@ -6,7 +6,7 @@
 /*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/26 12:05:50 by skuppers          #+#    #+#             */
-/*   Updated: 2019/05/29 18:41:26 by nrechati         ###   ########.fr       */
+/*   Updated: 2019/06/30 08:13:45 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ static int		resize_check(t_hash *hashmap)
 
 void			ft_del_hnode(void *node, void (*del)(void *))
 {
-	ft_free(((t_hnode *)node)->key);
+	free(((t_hnode *)node)->key);
 	((t_hnode *)node)->key = NULL;
 	if (del)
 		del(((t_hnode *)node)->data);
 	((t_hnode *)node)->data = NULL;
-	ft_free(node);
+	free(node);
 }
 
 static int		remove_first(t_hash *hashmap, uint32_t hash
@@ -48,7 +48,7 @@ static int		remove_first(t_hash *hashmap, uint32_t hash
 	tmp = hashmap->map[hash];
 	hashmap->map[hash] = hashmap->map[hash]->next;
 	ft_del_hnode(data, del);
-	ft_free(tmp);
+	free(tmp);
 	if (hashmap->used > 0)
 		hashmap->used -= 1;
 	if (!resize_check(hashmap))
@@ -63,7 +63,7 @@ static int		remove_data(t_hash *hashmap, t_list *ptr
 
 	tmp = ptr->next->next;
 	ft_del_hnode(data, del);
-	ft_free(ptr->next);
+	free(ptr->next);
 	ptr->next = tmp;
 	if (hashmap->used > 0)
 		hashmap->used -= 1;

@@ -6,7 +6,7 @@
 /*   By: ffoissey <ffoissey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 19:07:06 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/02/21 21:11:09 by ffoissey         ###   ########.fr       */
+/*   Updated: 2019/06/30 08:11:59 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	writer(char const *s, char *c, char ***tab, int word)
 		return (1);
 	while (!ft_strchr(c, s[i]) && s[i])
 		i++;
-	if (!(tab[0][word] = (char *)ft_malloc(sizeof(char) * i + 1)))
+	if (!(tab[0][word] = (char *)malloc(sizeof(char) * i + 1)))
 		return (-1);
 	ft_strncpy(tab[0][word], s, i);
 	tab[0][word][i] = '\0';
@@ -54,7 +54,7 @@ char		**ft_strsplit(char const *s, char *c)
 
 	if (!s || !(wordnum = parser(s, c)))
 		return (NULL);
-	if (!(tab = (char **)ft_malloc(sizeof(char *) * (wordnum + 1))))
+	if (!(tab = (char **)malloc(sizeof(char *) * (wordnum + 1))))
 		return (NULL);
 	if (writer(s, c, &tab, 0) == -1)
 		return (NULL);

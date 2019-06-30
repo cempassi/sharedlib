@@ -6,7 +6,7 @@
 /*   By: ffoissey <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 10:56:25 by ffoissey          #+#    #+#             */
-/*   Updated: 2018/11/29 13:53:34 by ffoissey         ###   ########.fr       */
+/*   Updated: 2019/06/30 08:14:37 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static char	*ft_strjoin_protected(char const *s1, char const *s2)
 	{
 		len_s1 = ft_strlen(s1);
 		len_s2 = ft_strlen(s2);
-		if (!(s_new = (char *)ft_malloc(sizeof(char) * (len_s1 + len_s2 + 1))))
+		if (!(s_new = (char *)malloc(sizeof(char) * (len_s1 + len_s2 + 1))))
 			return (NULL);
 		ft_strncpy(s_new, s1, ft_strlen(s1));
 		ft_strcpy(s_new + ft_strlen(s1), s2);

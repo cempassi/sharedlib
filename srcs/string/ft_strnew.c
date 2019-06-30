@@ -6,7 +6,7 @@
 /*   By: ffoissey <ffoissey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 11:51:04 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/01/17 14:41:17 by ffoissey         ###   ########.fr       */
+/*   Updated: 2019/06/30 06:21:28 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char		*ft_strnew(size_t size)
 {
 	char	*str;
 
-	if (!(str = (char *)ft_malloc(size + 1)))
+	if (!(str = (char *)malloc(size + 1)))
 		return (NULL);
 	ft_init(str, size + 1);
 	return (str);

@@ -6,14 +6,13 @@
 /*   By: ffoissey <ffoissey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/12 12:37:47 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/01/17 14:41:17 by ffoissey         ###   ########.fr       */
+/*   Updated: 2019/06/30 02:32:27 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int64_t				bit64_location(const char *cp, const char *str,
-				uint8_t is64bit)
+static int64_t	bit64_location(const char *cp, const char *str, uint8_t is64bit)
 {
 	if (cp[0] == 0)
 		return (cp - str);
@@ -37,13 +36,14 @@ int64_t				bit64_location(const char *cp, const char *str,
 	return (-1);
 }
 
-uint64_t				locate_eol(t_magic *magic,
-								const unsigned long int *lw_ptr,
-								const char *str)
+static uint64_t	locate_eol(t_magic *magic, const unsigned long int *lw_ptr
+							, const char *str)
 {
-	int64_t	length;
+	int64_t		length;
 	const char	*cp;
 
+	length = 0;
+	cp = NULL;
 	while (1)
 	{
 		magic->lw = *lw_ptr++;
@@ -58,7 +58,7 @@ uint64_t				locate_eol(t_magic *magic,
 	return (0);
 }
 
-void				prepare_masks(t_magic *magic)
+static void		prepare_masks(t_magic *magic)
 {
 	magic->hi = 0x80808080;
 	magic->lo = 0x01010101;
@@ -69,7 +69,7 @@ void				prepare_masks(t_magic *magic)
 	}
 }
 
-size_t            ft_strlen(const char *str)
+size_t			ft_strlen(const char *str)
 {
 	t_magic						magic;
 	const char					*char_ptr;
@@ -77,7 +77,8 @@ size_t            ft_strlen(const char *str)
 
 	if (str == NULL || *str == '\0')
 		return (0);
-	ft_memset(&magic, 0, sizeof(t_magic));
+	ft_bzero(&magic, sizeof(t_magic));
+	longword_ptr = NULL;
 	magic.lw = 0;
 	char_ptr = str;
 	while (((unsigned long int) char_ptr & (sizeof(magic.lw) - 1)) != 0)
@@ -87,6 +88,6 @@ size_t            ft_strlen(const char *str)
 			return (char_ptr - str);
 	}
 	prepare_masks(&magic);
-	longword_ptr = (unsigned long int *) char_ptr;
+	longword_ptr = (unsigned long int *)char_ptr;
 	return (locate_eol(&magic, longword_ptr, char_ptr) + char_ptr - str);
 }

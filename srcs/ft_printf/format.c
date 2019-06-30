@@ -6,7 +6,7 @@
 /*   By: ffoissey <ffoissey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/18 19:38:06 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/02/08 17:45:03 by ffoissey         ###   ########.fr       */
+/*   Updated: 2019/06/30 07:30:05 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void			format_delete(void *data)
 {
 	t_format *format;
 
-	format = (t_format *)(data);
+	format = (t_format *)data;
 	if (format->type == 's')
 		ft_strdel(&format->arg.string);
 	if (format->flag_color)

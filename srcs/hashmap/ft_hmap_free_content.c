@@ -6,7 +6,7 @@
 /*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/27 14:31:34 by skuppers          #+#    #+#             */
-/*   Updated: 2019/05/29 18:41:26 by nrechati         ###   ########.fr       */
+/*   Updated: 2019/06/30 07:15:02 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void		free_hnode_lst(t_list **ptr, void (*del)(void *))
 		tmp->next = NULL;
 		node = (t_hnode *)tmp->data;
 		ft_del_hnode(node, del);
-		ft_free(tmp);
+		free(tmp);
 	}
 }
 

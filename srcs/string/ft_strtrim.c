@@ -6,7 +6,7 @@
 /*   By: ffoissey <ffoissey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 15:10:39 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/01/17 14:41:17 by ffoissey         ###   ########.fr       */
+/*   Updated: 2019/06/30 08:11:19 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static char			*ft_sub(char const *s, unsigned int start, size_t len)
 {
 	char			*sub;
 
-	if (!(sub = (char *)ft_malloc(len + 1)))
+	if (!(sub = (char *)malloc(len + 1)))
 		return (NULL);
 	sub = ft_ncpy(sub, s + start, len);
 	sub[len] = '\0';
@@ -90,7 +90,7 @@ char				*ft_strtrim(char const *s)
 	str = trimmer(s, &len);
 	if (str == NULL)
 	{
-		if (!(trim = (char *)ft_malloc(sizeof(char) * 1)))
+		if (!(trim = (char *)malloc(sizeof(char) * 1)))
 			return (NULL);
 		*trim = '\0';
 		return (trim);

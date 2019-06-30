@@ -6,7 +6,7 @@
 /*   By: skuppers <skuppers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/25 17:57:29 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/05/07 15:56:50 by skuppers         ###   ########.fr       */
+/*   Updated: 2019/06/30 08:12:47 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	*ft_stckpop(t_stack *stack)
 	holder = stack->head;
 	stack->head = stack->head->next;
 	data = holder->data;
-	ft_free(holder);
+	free(holder);
 	stack->size--;
 	return (data);
 }

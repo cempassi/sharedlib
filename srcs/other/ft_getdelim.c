@@ -6,7 +6,7 @@
 /*   By: ffoissey <ffoissey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/04 03:06:00 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/03/01 14:03:32 by ffoissey         ###   ########.fr       */
+/*   Updated: 2019/06/30 05:53:17 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int				ft_getdelim(const int fd, char **line, char delim)
 	t_file			*current;
 	int				result;
 
-	if (line == NULL || fd < 0 || read(fd, buffer, 0) == -1
+	if (line == NULL || *line == 0 || fd < 0 || read(fd, buffer, 0) == -1
 		|| !(current = fd_manager(&lst, fd, lst)))
 		return (-1);
 	ft_bzero(buffer, BUFF_SIZE + 1);

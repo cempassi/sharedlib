@@ -6,7 +6,7 @@
 /*   By: ffoissey <ffoissey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/04 03:19:35 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/01/17 14:41:17 by ffoissey         ###   ########.fr       */
+/*   Updated: 2019/06/30 06:37:00 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void		ft_freetab(char ***tab)
 	if (*tab)
 	{
 		while (tmp[i])
-			ft_free(tmp[i++]);
-		ft_free(*tab);
+			free(tmp[i++]);
+		free(*tab);
 	}
 	*tab = NULL;
 }

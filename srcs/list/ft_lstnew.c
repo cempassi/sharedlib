@@ -6,7 +6,7 @@
 /*   By: ffoissey <ffoissey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 11:11:51 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/01/17 14:41:17 by ffoissey         ###   ########.fr       */
+/*   Updated: 2019/06/30 08:12:25 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list		*ft_lstnew(void const *data, size_t data_size)
 {
 	t_list		*new;
 
-	if (!(new = (t_list *)ft_malloc(sizeof(t_list))))
+	if (!(new = (t_list *)malloc(sizeof(t_list))))
 		return (NULL);
 	if (!data)
 	{
@@ -27,9 +27,9 @@ t_list		*ft_lstnew(void const *data, size_t data_size)
 		new->next = NULL;
 		return (new);
 	}
-	if (!(new->data = ft_malloc(data_size)))
+	if (!(new->data = malloc(data_size)))
 	{
-		ft_free(new);
+		free(new);
 		return (NULL);
 	}
 	new->data_size = data_size;

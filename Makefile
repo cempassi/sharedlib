@@ -6,7 +6,7 @@
 #    By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/17 23:46:04 by ffoissey          #+#    #+#              #
-#    Updated: 2019/06/25 14:05:34 by nrechati         ###   ########.fr        #
+#    Updated: 2019/06/30 08:54:51 by cempassi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,12 +61,6 @@ SRCS += ft_memcpy.c
 SRCS += ft_memccpy.c
 SRCS += ft_memdel.c
 SRCS += ft_memset.c
-
-#---------------Garbage Collector----------------#
-SRCS += ft_malloc.c
-SRCS += ft_free.c
-SRCS += ft_flush_memory.c
-SRCS += ft_head_memory.c
 
 #--------------------Vectors---------------------#
 SRCS += vct_new.c
@@ -254,10 +248,6 @@ WFLAGS += -Werror
 WFLAGS += -Wextra
 IFLAGS = -I$(PATHI)
 CFLAGS = $(WFLAGS)
-GC ?= 1
-ifneq ($(GC), 0)
-	CFLAGS += -D GC
-endif
 
 vpath %.c srcs/conversion
 vpath %.c srcs/get_next_line

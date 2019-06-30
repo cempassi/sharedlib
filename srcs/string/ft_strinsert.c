@@ -6,7 +6,7 @@
 /*   By: ffoissey <ffoissey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/27 04:38:26 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/01/17 14:41:17 by ffoissey         ###   ########.fr       */
+/*   Updated: 2019/06/30 08:11:39 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char		*ft_strinsert(char **str, char c, size_t index)
 	i = 0;
 	cpy = *str;
 	len = ft_strlen(*str) + 2;
-	if (!(tmp = (char *)ft_malloc(sizeof(char) * len)))
+	if (!(tmp = (char *)malloc(sizeof(char) * len)))
 		return (NULL);
 	while (--len)
 	{

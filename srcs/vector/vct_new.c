@@ -6,7 +6,7 @@
 /*   By: skuppers <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 08:57:24 by skuppers          #+#    #+#             */
-/*   Updated: 2019/06/05 09:00:19 by skuppers         ###   ########.fr       */
+/*   Updated: 2019/06/30 08:09:59 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ t_vector	*vct_new(uint64_t size)
 	t_vector	*new;
 	char		*buffer;
 
-	if (!(new = ft_malloc(sizeof(t_vector))))
+	if (!(new = malloc(sizeof(t_vector))))
 		return (NULL);
 	if (size > 0)
 	{
 		if (!(buffer = ft_strnew(size)))
 		{
-			ft_free(new);
+			free(new);
 			return (NULL);
 		}
 		new->size = size;
@@ -38,7 +38,7 @@ t_vector	*vct_new(uint64_t size)
 	{
 		if (!(buffer = ft_strnew(DEFAULT_VECTOR_SIZE)))
 		{
-			ft_free(new);
+			free(new);
 			return (NULL);
 		}
 		new->size = DEFAULT_VECTOR_SIZE;

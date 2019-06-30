@@ -6,7 +6,7 @@
 /*   By: ffoissey <ffoissey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/19 16:45:20 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/02/20 01:27:15 by ffoissey         ###   ########.fr       */
+/*   Updated: 2019/06/30 06:17:20 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(const char *s1)
 
 	if (!s1)
 		return (NULL);
-	if (!(dst = (char *)ft_malloc(sizeof(char) * ft_strlen(s1) + 1)))
+	if (!(dst = (char *)malloc(sizeof(char) * ft_strlen(s1) + 1)))
 		return (NULL);
 	return (ft_strcpy(dst, s1));
 }
