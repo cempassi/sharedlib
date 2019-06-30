@@ -18,6 +18,8 @@
 
 int8_t             vct_pop(t_vector *vector)
 {
+  if (vct_len(vector) == 0)
+    return (0);
   vector->buffer[vct_len(vector) - 1] = '\0';
   return (0);
 }
