@@ -22,6 +22,8 @@ int8_t        vct_reset(t_vector *vector)
 {
     char *new;
 
+	if (vector == NULL)
+		return (0);
 	if (!(new = ft_strnew(DEFAULT_VECTOR_SIZE)))
 		return (-1);
 	ft_strdel(&(vector->buffer));
