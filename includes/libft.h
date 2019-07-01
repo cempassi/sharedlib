@@ -6,7 +6,7 @@
 /*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 21:55:01 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/06/25 10:44:39 by nrechati         ###   ########.fr       */
+/*   Updated: 2019/07/01 13:01:09 by nrechati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@
 void				ft_freetab(char ***t);
 char				**ft_getargstab(int ac, char **av);
 void				ft_showtab(char **t);
+int					ft_tabsize(char **tab);
 int					ft_taboneach(char **current, void *context
 								, char *(*mod)(char *, void *));
 int					ft_getopt(int ac, char **av, const char *optstr);

@@ -6,7 +6,7 @@
 #    By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/17 23:46:04 by ffoissey          #+#    #+#              #
-#    Updated: 2019/06/30 08:54:51 by cempassi         ###   ########.fr        #
+#    Updated: 2019/07/01 13:01:49 by nrechati         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -153,6 +153,7 @@ SRCS += ft_freetab.c
 SRCS += ft_getargstab.c
 SRCS += ft_showtab.c
 SRCS += ft_taboneach.c
+SRCS += ft_tabsize.c
 
 #--------------------Lists-----------------------#
 SRCS += ft_mergesort.c
