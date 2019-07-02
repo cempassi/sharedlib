@@ -6,7 +6,7 @@
 /*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/26 12:07:05 by skuppers          #+#    #+#             */
-/*   Updated: 2019/06/04 14:13:00 by nrechati         ###   ########.fr       */
+/*   Updated: 2019/07/03 00:33:43 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ static int		ft_create_hnode(t_list **alst, char *key, void *data)
 
 int				ft_hmap_insert(t_hash *hashmap, char *key, void *data)
 {
-	size_t	 key_len;
-	uint32_t hash;
+	size_t		key_len;
+	uint32_t	hash;
 
 	if (ft_hmap_getdata(hashmap, key))
 		return (0);

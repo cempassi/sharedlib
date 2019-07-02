@@ -6,7 +6,7 @@
 /*   By: cempassi <cempassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/28 07:17:47 by cempassi          #+#    #+#             */
-/*   Updated: 2019/06/06 16:32:48 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/07/03 00:31:28 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	return_manager(int mask)
 	return (check);
 }
 
-t_list		*ereaser(t_list *current, void *data,  t_cmp cmp, t_del del)
+t_list		*ereaser(t_list *current, void *data, t_cmp cmp, t_del del)
 {
 	t_list		*tmp;
 

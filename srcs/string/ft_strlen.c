@@ -6,7 +6,7 @@
 /*   By: ffoissey <ffoissey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/12 12:37:47 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/06/30 02:32:27 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/07/03 00:58:35 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ size_t			ft_strlen(const char *str)
 {
 	t_magic						magic;
 	const char					*char_ptr;
-	const unsigned long int 	*longword_ptr;
+	const unsigned long int		*longword_ptr;
 
 	if (str == NULL || *str == '\0')
 		return (0);
@@ -81,7 +81,7 @@ size_t			ft_strlen(const char *str)
 	longword_ptr = NULL;
 	magic.lw = 0;
 	char_ptr = str;
-	while (((unsigned long int) char_ptr & (sizeof(magic.lw) - 1)) != 0)
+	while (((unsigned long int)char_ptr & (sizeof(magic.lw) - 1)) != 0)
 	{
 		++char_ptr;
 		if (*char_ptr == '\0')

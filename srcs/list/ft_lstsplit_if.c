@@ -6,14 +6,13 @@
 /*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/28 07:17:47 by cempassi          #+#    #+#             */
-/*   Updated: 2019/06/14 14:56:41 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/07/03 00:30:57 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static t_list		*spliter(t_list *current, t_list **new,\
-							void *context, t_cmp cmp)
+static t_list	*split(t_list *current, t_list **new, void *context, t_cmp cmp)
 {
 	t_list		*old;
 	t_list		*tmp;
@@ -48,6 +47,6 @@ t_list			*ft_lstsplit_if(t_list **lst, void *context, t_cmp cmp)
 		ft_lstaddback(&new, holder);
 	}
 	if (*lst && (*lst)->next)
-		(*lst)->next = spliter((*lst)->next, &new, context, cmp);
+		(*lst)->next = split((*lst)->next, &new, context, cmp);
 	return (new);
 }

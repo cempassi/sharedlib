@@ -6,13 +6,12 @@
 /*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 21:55:01 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/07/01 13:01:09 by nrechati         ###   ########.fr       */
+/*   Updated: 2019/07/03 00:12:07 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# define BUFF_SIZE 4096
 # define BASE_MAX 66
 # define SUCCESS 0
 # define FAILURE -1

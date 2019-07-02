@@ -6,7 +6,7 @@
 /*   By: ffoissey <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 10:56:25 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/06/30 08:14:37 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/07/03 00:32:46 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static char	*ft_strjoin_protected(char const *s1, char const *s2)
 	return (s_new);
 }
 
-static void		ft_fill_line_with_rest(t_gnl_file *file)
+static void	ft_fill_line_with_rest(t_gnl_file *file)
 {
 	char	*tmp;
 	char	*tmp_rest;
@@ -65,7 +65,7 @@ static void		ft_fill_line_with_rest(t_gnl_file *file)
 	}
 }
 
-static int		ft_read(t_gnl_file *file)
+static int	ft_read(t_gnl_file *file)
 {
 	int		ret;
 	char	buf[BUFF_SIZE + 1];
@@ -93,7 +93,7 @@ static int		ft_read(t_gnl_file *file)
 	return (ret == -1 ? -1 : file->state);
 }
 
-int				get_next_line(const int fd, char **line)
+int			get_next_line(const int fd, char **line)
 {
 	static	t_gnl_file	file;
 

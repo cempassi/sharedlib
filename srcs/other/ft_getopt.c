@@ -6,7 +6,7 @@
 /*   By: ffoissey <ffoissey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/27 03:15:30 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/02/04 21:39:09 by ffoissey         ###   ########.fr       */
+/*   Updated: 2019/07/03 00:16:01 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ static char		parser(int ac, char **av, const char *optstr, char **opt)
 
 int				ft_getopt(int ac, char **av, const char *optstr)
 {
-	static t_buffer	opt = {.buffer = NULL, .index = 0};
-	int				error;
+	static t_opt_buffer	opt = {.buffer = NULL, .index = 0};
+	int					error;
 
 	if (ac == 1 || av == NULL || optstr == NULL)
 		return (0);
