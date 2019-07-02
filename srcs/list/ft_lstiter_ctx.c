@@ -6,7 +6,7 @@
 /*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 10:59:10 by nrechati          #+#    #+#             */
-/*   Updated: 2019/06/25 10:45:01 by nrechati         ###   ########.fr       */
+/*   Updated: 2019/07/02 17:12:00 by nrechati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		ft_lstiter_ctx(t_list *lst, void *context
 	{
 		if (f(context, lst->data) == FAILURE)
 			return (FAILURE);
-		ft_lstiter_ctx(lst->next, context, f);
+		return (ft_lstiter_ctx(lst->next, context, f));
 	}
 	return (SUCCESS);
 }
