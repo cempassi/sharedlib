@@ -6,7 +6,7 @@
 #    By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/17 23:46:04 by ffoissey          #+#    #+#              #
-#    Updated: 2019/07/01 13:01:49 by nrechati         ###   ########.fr        #
+#    Updated: 2019/07/04 19:37:58 by cempassi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,6 @@ PATHO = objs/
 PATHI = includes/
 
 INCS += libft.h
-INCS += ft_malloc.h
 INCS += ft_printf.h
 INCS += conversion.h
 INCS += output.h

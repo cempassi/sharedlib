@@ -6,7 +6,7 @@
 /*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 21:55:01 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/07/03 00:12:07 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/07/04 19:37:09 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 
 # include <string.h>
 # include "ft_printf.h"
-# include "ft_malloc.h"
 # include "list.h"
 # include "directory.h"
 # include "str.h"
