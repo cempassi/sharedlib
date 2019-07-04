@@ -6,7 +6,7 @@
 /*   By: skuppers <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 11:18:43 by skuppers          #+#    #+#             */
-/*   Updated: 2019/06/30 07:12:25 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/07/03 17:01:38 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 **	Deletes a vector and its internal buffer
 */
 
-void        vct_del(t_vector **vector)
+void		vct_del(t_vector **vector)
 {
-    if (vector == NULL)
-        return ;
-    ft_strdel(&(*vector)->buffer);
-    free(*vector);
-    *vector = NULL;
+	if (vector == NULL)
+		return ;
+	ft_strdel(&(*vector)->buffer);
+	free(*vector);
+	*vector = NULL;
 }

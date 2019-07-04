@@ -6,7 +6,7 @@
 /*   By: ffoissey <ffoissey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 13:06:45 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/06/30 06:26:30 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/07/03 22:30:32 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 void	ft_lstdelone(t_list **alst, void (*del)(void *))
 {
-	if (!alst || !alst)
+	if (!alst || !*alst)
 		return ;
 	if (del)
 		del((*alst)->data);

@@ -6,7 +6,7 @@
 /*   By: skuppers <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 09:39:44 by skuppers          #+#    #+#             */
-/*   Updated: 2019/06/05 09:41:27 by skuppers         ###   ########.fr       */
+/*   Updated: 2019/07/03 17:01:40 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 **	Resizes accordingly.
 */
 
-int8_t         vct_ncpy(t_vector *dest, t_vector *source,
-                        uint64_t len)
+int8_t		 vct_ncpy(t_vector *dest, t_vector *source,
+						uint64_t len)
 {
-    vct_scpy(dest, source->buffer, len);
-    return (0);
+	vct_scpy(dest, source->buffer, len);
+	return (0);
 }

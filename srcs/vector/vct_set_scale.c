@@ -6,13 +6,13 @@
 /*   By: skuppers <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 10:27:37 by skuppers          #+#    #+#             */
-/*   Updated: 2019/06/05 10:27:37 by skuppers         ###   ########.fr       */
+/*   Updated: 2019/07/03 17:01:44 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 
-void     vct_set_scale(t_vector *vector, uint16_t scale)
+void	 vct_set_scale(t_vector *vector, uint16_t scale)
 {
-    vector->scale = scale;
+	vector->scale = scale;
 }

@@ -6,7 +6,7 @@
 /*   By: skuppers <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 09:42:39 by skuppers          #+#    #+#             */
-/*   Updated: 2019/06/05 09:45:01 by skuppers         ###   ########.fr       */
+/*   Updated: 2019/07/03 17:01:42 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@
 **	then buffers SIZE, an equivalent reallocation occurs.
 */
 
-int8_t             vct_push(t_vector *vector, char c)
+int8_t			 vct_push(t_vector *vector, char c)
 {
-    if (vct_len(vector) + 1 >= vector->size)
-        if(vct_scale(vector) == -1)
+	if (vct_len(vector) + 1 >= vector->size)
+		if(vct_scale(vector) == -1)
 				return (-1);
-    shift_right(vector, 0);
-    vector->buffer[0] = c;
-    return (0);
+	shift_right(vector, 0);
+	vector->buffer[0] = c;
+	return (0);
 }

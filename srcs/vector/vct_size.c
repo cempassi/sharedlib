@@ -6,13 +6,13 @@
 /*   By: skuppers <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 10:27:29 by skuppers          #+#    #+#             */
-/*   Updated: 2019/06/05 10:27:30 by skuppers         ###   ########.fr       */
+/*   Updated: 2019/07/03 17:01:44 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 
-uint64_t    vct_size(t_vector *vector)
+uint64_t	vct_size(t_vector *vector)
 {
-    return (vector->size);
+	return (vector->size);
 }

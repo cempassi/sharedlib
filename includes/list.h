@@ -6,7 +6,7 @@
 /*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/17 21:17:56 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/06/25 14:05:09 by nrechati         ###   ########.fr       */
+/*   Updated: 2019/07/04 04:13:10 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ void				ft_lstiter(t_list *lst, void (*f)(void *data));
 int					ft_lstiter_ctx(t_list *lst, void *context
 							, int (*f)(void *context, void *data));
 size_t				ft_lstlen(t_list *lst);
-t_list				*ft_lstmap(t_list *lst, void *context, t_lstmap func, t_del del);
+t_list				*ft_lstmap(t_list *lst, void *context, t_lstmap func
+							, t_del del);
 t_list				*ft_lstmerge(t_list **alst, t_list *blst);
 void				ft_lstrev(t_list **alst);
 int					ft_lstaddback(t_list **alst, t_list *new);

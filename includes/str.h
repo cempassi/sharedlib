@@ -6,7 +6,7 @@
 /*   By: cedricmpassi <ffoissey@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/17 20:36:32 by cedricmpa         #+#    #+#             */
-/*   Updated: 2019/05/02 22:53:13 by ffoissey         ###   ########.fr       */
+/*   Updated: 2019/07/04 04:13:57 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,22 +29,6 @@ typedef struct		s_file
 	int				status;
 	char			*str;
 }					t_file;
-
-
-//////////////////////////////////////////////////////////////////////
-/*typedef struct		s_vector
-{
-	char			*buffer;
-	size_t			size;
-}					t_vector;
-
-int					ft_vctreset(t_vector *vct);
-int					ft_vctrescale(t_vector *vct);
-size_t				ft_vctlen(t_vector *vct);
-t_vector			*ft_vctnew(size_t optional_size);*/
-////////////////////////////////////////////////////////////////////
-
-
 
 int					ft_strendswith(char *string, char *suffix);
 int					ft_strbeginswith(const char *string, char *prefix);
