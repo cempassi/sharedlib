@@ -6,7 +6,7 @@
 /*   By: skuppers <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 11:18:44 by skuppers          #+#    #+#             */
-/*   Updated: 2019/07/03 17:01:38 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/07/04 12:19:49 by skuppers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 **	Always returns 0.
 */
 
-int8_t	   vct_del_string(t_vector *vector,
+int8_t	vct_del_string(t_vector *vector,
 					uint64_t start, uint64_t len)
 {
 	shift_nleft(vector, start, len);

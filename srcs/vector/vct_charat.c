@@ -6,7 +6,7 @@
 /*   By: skuppers <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 11:20:51 by skuppers          #+#    #+#             */
-/*   Updated: 2019/06/06 15:59:46 by skuppers         ###   ########.fr       */
+/*   Updated: 2019/07/04 12:07:55 by skuppers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,5 @@
 
 char	vct_charat(t_vector *vct, uint64_t index)
 {
-//	if (index > vct_len(vct))
-//		return (0);
 	return (vct->buffer[index]);
 }

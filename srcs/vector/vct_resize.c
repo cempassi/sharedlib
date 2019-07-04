@@ -6,13 +6,13 @@
 /*   By: skuppers <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 09:50:37 by skuppers          #+#    #+#             */
-/*   Updated: 2019/07/03 17:01:43 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/07/04 12:11:28 by skuppers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 
-int8_t	 vct_resize(t_vector *vector, uint64_t new_size)
+int8_t	vct_resize(t_vector *vector, uint64_t new_size)
 {
 	char *new;
 

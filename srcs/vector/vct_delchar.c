@@ -5,17 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: skuppers <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/05 09:27:51 by skuppers          #+#    #+#             */
-/*   Updated: 2019/07/03 17:01:39 by cempassi         ###   ########.fr       */
+/*   Created: 2019/07/04 12:20:04 by skuppers          #+#    #+#             */
+/*   Updated: 2019/07/04 12:21:05 by skuppers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
-
-/*
-**	Deletes the character at the specified index of the vector.
-**	Returns 0 on success or -1 if the index is bigger then the vector length.
-*/
 
 int8_t	   vct_del_char(t_vector *vector, uint64_t index)
 {

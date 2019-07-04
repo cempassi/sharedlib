@@ -6,7 +6,7 @@
 /*   By: skuppers <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 11:18:41 by skuppers          #+#    #+#             */
-/*   Updated: 2019/07/03 17:00:25 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/07/04 12:19:01 by skuppers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 **  then buffers SIZE, an equivalent reallocation occurs.
 */
 
-int8_t			 vct_add(t_vector *vector, char c)
+int8_t	vct_add(t_vector *vector, char c)
 {
 	uint64_t len;
 
