@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: skuppers <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/05 09:45:05 by skuppers          #+#    #+#             */
-/*   Updated: 2019/07/03 17:01:43 by cempassi         ###   ########.fr       */
+/*   Created: 2019/07/04 13:15:44 by skuppers          #+#    #+#             */
+/*   Updated: 2019/07/04 13:25:26 by skuppers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 **	Returns 0 on success or -1 if index is bigger than the vector length.
 */
 
-int8_t	   vct_replace_char(t_vector *vector, char c, uint64_t index)
+int8_t	vct_replace_char(t_vector *vector, char c, uint64_t index)
 {
 	if (index > vct_len(vector))
 		return (-1);

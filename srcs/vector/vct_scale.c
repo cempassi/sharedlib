@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: skuppers <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/05 09:04:18 by skuppers          #+#    #+#             */
-/*   Updated: 2019/07/03 17:01:44 by cempassi         ###   ########.fr       */
+/*   Created: 2019/07/04 13:12:29 by skuppers          #+#    #+#             */
+/*   Updated: 2019/07/04 13:31:48 by skuppers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 
-int8_t	 vct_scale(t_vector *vector)
+int8_t	vct_scale(t_vector *vector)
 {
 	char *new;
 

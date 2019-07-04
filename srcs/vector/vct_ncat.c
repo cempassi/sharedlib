@@ -6,7 +6,7 @@
 /*   By: skuppers <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 09:37:37 by skuppers          #+#    #+#             */
-/*   Updated: 2019/07/03 17:01:40 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/07/04 13:24:29 by skuppers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 **	Resizes automatically.
 */
 
-int8_t		 vct_ncat(t_vector *dest, t_vector *source,
+int8_t		vct_ncat(t_vector *dest, t_vector *source,
 						uint64_t len)
 {
 	vct_scat(dest, source->buffer, len);

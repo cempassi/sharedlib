@@ -6,7 +6,7 @@
 /*   By: skuppers <skuppers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/07 15:54:59 by skuppers          #+#    #+#             */
-/*   Updated: 2019/05/07 15:57:55 by skuppers         ###   ########.fr       */
+/*   Updated: 2019/07/04 13:39:34 by skuppers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ void		ft_print_stack_functions(char **stack, size_t size)
 	if (size == 1)
 		return ;
 	dprintf(2, "--> \033[32m|Stack state at the time of allocation|\033[0m\n");
-	dprintf(2, "    ---------------------------------------\n");
 	i = 1;
 	while (i < size && i < 20)
 	{
@@ -64,7 +63,7 @@ void		ft_print_stack_functions(char **stack, size_t size)
 }
 
 void		ft_print_memory_debug(t_meminfo *meminfo)
-{	
+{
 	dprintf(2, "\033[31m\nMemory leak at address %p:\n\033[0m", meminfo->addr);
 	dprintf(2, "--> \033[36mTime\t : %s\033[0m", meminfo->time);
 	dprintf(2, "--> \033[36mSize\t : %zu byte%s\033[0m", meminfo->size,

@@ -6,18 +6,18 @@
 /*   By: skuppers <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 09:38:38 by skuppers          #+#    #+#             */
-/*   Updated: 2019/07/03 17:01:44 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/07/04 13:26:31 by skuppers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 
 /*
-**	Concatenates `len` characters from the string `source`, to the vector `dest`.
-**	Resizes automaticaly.
+**	Concatenates `len` characters from the string `source`,
+**	to the vector `dest`. Resizes automaticaly.
 */
 
-int8_t		 vct_scat(t_vector *dest, char *source,
+int8_t	vct_scat(t_vector *dest, char *source,
 						uint64_t len)
 {
 	if (dest->size < (vct_len(dest) + len))

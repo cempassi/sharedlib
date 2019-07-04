@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vct_replace_string.c                               :+:      :+:    :+:   */
+/*   xvct_replace_string.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skuppers <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/05 09:47:11 by skuppers          #+#    #+#             */
-/*   Updated: 2019/07/03 17:01:43 by cempassi         ###   ########.fr       */
+/*   Created: 2019/07/04 13:10:23 by skuppers          #+#    #+#             */
+/*   Updated: 2019/07/04 13:37:26 by skuppers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,15 @@
 **	Returns -1 on invalid start/end indexes or 0 on success.
 */
 
-int8_t	   vct_replace_string(t_vector *vector,
+static void	do_diff(uint64_t tmp, t_vector *vector, uint64_t start_index,
+				char *str)
+{
+	shift_nleft(vector, start_index, tmp);
+	while (*str != '\0')
+		vector->buffer[start_index++] = *str++;
+}
+
+int8_t		vct_replace_string(t_vector *vector,
 					uint64_t start_index, uint64_t end_index, char *str)
 {
 	uint64_t	del_diff;
@@ -38,12 +46,7 @@ int8_t	   vct_replace_string(t_vector *vector,
 			vector->buffer[start_index++] = *str++;
 	}
 	else if (str_len < del_diff)
-	{
-		tmp = del_diff - str_len;
-		shift_nleft(vector, start_index, tmp);
-		while (*str != '\0')
-			vector->buffer[start_index++] = *str++;
-	}
+		do_diff(del_diff - str_len, vector, start_index, str);
 	else
 		while (*str != '\0')
 			vector->buffer[start_index++] = *str++;

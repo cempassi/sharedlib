@@ -6,12 +6,12 @@
 /*   By: ffoissey <ffoissey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/12 12:37:47 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/07/03 14:35:43 by skuppers         ###   ########.fr       */
+/*   Updated: 2019/07/04 13:38:44 by skuppers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-/*
+
 static int64_t	bit64_location(const char *cp, const char *str, uint8_t is64bit)
 {
 	if (cp[0] == 0)
@@ -68,13 +68,9 @@ static void		prepare_masks(t_magic *magic)
 		magic->lo = ((magic->lo << 16) << 16) | magic->lo;
 	}
 }
-*/
+
 size_t			ft_strlen(const char *str)
 {
-	if (str == NULL)
-		return (0);
-	return (strlen(str));
-/*
 	t_magic						magic;
 	const char					*char_ptr;
 	const unsigned long int		*longword_ptr;
@@ -93,6 +89,5 @@ size_t			ft_strlen(const char *str)
 	}
 	prepare_masks(&magic);
 	longword_ptr = (unsigned long int *)char_ptr;
-return (locate_eol(&magic, longword_ptr, char_ptr) + char_ptr - str);
-*/
+	return (locate_eol(&magic, longword_ptr, char_ptr) + char_ptr - str);
 }

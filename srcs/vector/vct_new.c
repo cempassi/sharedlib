@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: skuppers <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/05 08:57:24 by skuppers          #+#    #+#             */
-/*   Updated: 2019/06/30 08:09:59 by cempassi         ###   ########.fr       */
+/*   Created: 2019/07/04 13:15:04 by skuppers          #+#    #+#             */
+/*   Updated: 2019/07/04 13:31:35 by skuppers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,13 @@
 **	It returns a pointer to the newly allocated structure on success,
 **	or NULL on malloc error.
 */
+
+static void	set_vct(t_vector *new, char *buffer)
+{
+	new->buffer = buffer;
+	new->scale = DEFAULT_VECTOR_SCALE;
+}
+
 t_vector	*vct_new(uint64_t size)
 {
 	t_vector	*new;
@@ -43,7 +50,6 @@ t_vector	*vct_new(uint64_t size)
 		}
 		new->size = DEFAULT_VECTOR_SIZE;
 	}
-	new->buffer = buffer;
-	new->scale = DEFAULT_VECTOR_SCALE;
+	set_vct(new, buffer);
 	return (new);
 }
