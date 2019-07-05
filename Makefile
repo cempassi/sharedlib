@@ -306,4 +306,4 @@ fclean: clean cleandb
 re : fclean all
 
 .PHONY: all clean fclean debug cleandb
-#.SILENT:
+.SILENT:

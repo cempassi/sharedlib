@@ -57,7 +57,10 @@ char		**ft_strsplit(char const *s, char *c)
 	if (!(tab = (char **)malloc(sizeof(char *) * (wordnum + 1))))
 		return (NULL);
 	if (writer(s, c, &tab, 0) == -1)
+	{
+		ft_freetab(&tab);
 		return (NULL);
+	}
 	tab[wordnum] = NULL;
 	return (tab);
 }

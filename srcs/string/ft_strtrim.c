@@ -45,7 +45,7 @@ static char			*ft_sub(char const *s, unsigned int start, size_t len)
 {
 	char			*sub;
 
-	if (!(sub = (char *)malloc(len + 1)))
+	if (!(sub = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	sub = ft_ncpy(sub, s + start, len);
 	sub[len] = '\0';
