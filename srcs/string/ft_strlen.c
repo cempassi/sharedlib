@@ -42,7 +42,6 @@ static uint64_t	locate_eol(t_magic *magic, const unsigned long int *lw_ptr
 	int64_t		length;
 	const char	*cp;
 
-	length = 0;
 	cp = NULL;
 	while (1)
 	{
