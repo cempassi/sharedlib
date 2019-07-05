@@ -12,7 +12,7 @@
 
 CC = clang
 COMPILE = $(CC) -c
-DEBUG = $(CC) -g3 -c
+DEBUG = $(CC) -g3 -c -fsanitize=address,undefined
 
 # Reset
 NC = \033[0m
@@ -306,4 +306,4 @@ fclean: clean cleandb
 re : fclean all
 
 .PHONY: all clean fclean debug cleandb
-.SILENT:
+#.SILENT:

@@ -18,7 +18,7 @@
 
 void		vct_del(t_vector **vector)
 {
-	if (vector == NULL)
+	if (vector == NULL || *vector == NULL)
 		return ;
 	ft_strdel(&(*vector)->buffer);
 	free(*vector);
