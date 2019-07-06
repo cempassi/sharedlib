@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   str.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cedricmpassi <ffoissey@student.42.fr>      +#+  +:+       +#+        */
+/*   By: cedricmpassi <cempassi@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/17 20:36:32 by cedricmpa         #+#    #+#             */
 /*   Updated: 2019/07/04 04:13:57 by cempassi         ###   ########.fr       */
