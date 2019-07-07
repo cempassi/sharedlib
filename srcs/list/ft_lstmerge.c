@@ -6,7 +6,7 @@
 /*   By: ffoissey <ffoissey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 10:56:37 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/01/26 00:43:27 by ffoissey         ###   ########.fr       */
+/*   Updated: 2019/07/06 23:47:40 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ t_list	*ft_lstmerge(t_list **alst, t_list *blst)
 		*alst = blst;
 		return (*alst);
 	}
-	while (holder->next != NULL)
-		holder = holder->next;
-	holder->next = blst;
+	ft_lstaddback(alst, blst);
 	return (*alst);
 }
