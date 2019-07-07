@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoll_base.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cempassi <cempassi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 20:47:23 by cempassi          #+#    #+#             */
-/*   Updated: 2019/06/26 07:01:51 by cempassi         ###   ########.fr       */
+/*   Updated: 2019/07/07 04:54:08 by nrechati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,11 @@ long long	ft_atoll_base(char *str, char *base)
 		return (0);
 	while (*str == ' ' || (*str >= '\t' && *str <= '\r'))
 		str++;
-	if (ft_strchr("+-", *str) || ft_isdigit(*str))
+	if ((ft_strchr("+-", *str) && ft_isdigit(*str + 1)) || ft_isdigit(*str))
 	{
 		ft_isdigit(*str) ? converter(str, base, baselen, &res)
 			: converter(str + 1, base, baselen, &res);
+		return (str[0] == '-' ? -res : res);
 	}
-	return (str[0] == '-' ? -res : res);
+	return (0);
 }
