@@ -3,9 +3,9 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ffoissey <ffoissey@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cempassi <cempassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 19:07:06 by ffoissey          #+#    #+#             */
+/*   Created: 2018/11/08 19:07:06 by cempassi          #+#    #+#             */
 /*   Updated: 2019/06/30 08:11:59 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -57,7 +57,10 @@ char		**ft_strsplit(char const *s, char *c)
 	if (!(tab = (char **)malloc(sizeof(char *) * (wordnum + 1))))
 		return (NULL);
 	if (writer(s, c, &tab, 0) == -1)
+	{
+		ft_freetab(&tab);
 		return (NULL);
+	}
 	tab[wordnum] = NULL;
 	return (tab);
 }

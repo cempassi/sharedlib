@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/26 12:07:05 by skuppers          #+#    #+#             */
-/*   Updated: 2019/07/03 00:33:43 by cempassi         ###   ########.fr       */
+/*   Created: 2019/03/26 12:07:05 by nrechati          #+#    #+#             */
+/*   Updated: 2019/07/07 02:35:18 by nrechati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int				ft_hmap_insert(t_hash *hashmap, char *key, void *data)
 		if (!ft_hmap_resize(hashmap, hashmap->map_size << 1))
 		{
 			ft_dprintf(2, "SYSTEM FAILURE : Can't resize HMAP");
-			return (0);
+			return (-1);
 		}
 	}
 	hash = ft_hash_str(key, hashmap->map_size);

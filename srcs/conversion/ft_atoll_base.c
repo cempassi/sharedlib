@@ -3,45 +3,76 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoll_base.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ffoissey <ffoissey@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/19 20:47:23 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/06/26 07:01:51 by cempassi         ###   ########.fr       */
+/*   Created: 2018/12/19 20:47:23 by cempassi          #+#    #+#             */
+/*   Updated: 2019/07/07 05:28:03 by nrechati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	converter(char *str, char *base, int len, long long *res)
+static long long	ft_base_check_and_strlen(char *base)
 {
-	int		i;
+	long long		i;
+	long long		length;
 
-	i = 0;
-	if (*str != '\0')
+	length = 0;
+	while (base[length] != '\0')
 	{
-		while (base[i] != *str)
-			i++;
-		*res = (*res * len) + i;
-		converter(str + 1, base, len, res);
+		if (base[length] == '+' || base[length] == '-')
+			return (0);
+		i = length - 1;
+		while (i >= 0)
+		{
+			if (base[i] == base[length])
+				return (0);
+			i--;
+		}
+		length++;
 	}
-	return ;
+	return (length);
 }
 
-long long	ft_atoll_base(char *str, char *base)
+static long long	ft_is_in_base(char *str, char c)
 {
-	int			baselen;
-	long long	res;
+	long long	i;
 
-	res = 0;
-	baselen = ft_strlen(base);
-	if (str == 0 || *str == '\0')
-		return (0);
-	while (*str == ' ' || (*str >= '\t' && *str <= '\r'))
-		str++;
-	if (ft_strchr("+-", *str) || ft_isdigit(*str))
+	i = 0;
+	while (str[i])
 	{
-		ft_isdigit(*str) ? converter(str, base, baselen, &res)
-			: converter(str + 1, base, baselen, &res);
+		if (str[i] == c)
+			return (i);
+		i++;
 	}
-	return (str[0] == '-' ? -res : res);
+	return (-1);
+}
+
+long long			ft_atoll_base(char *str, char *base)
+{
+	long long	i;
+	long long	sig;
+	long long	nbase;
+	long long	value;
+
+	i = 0;
+	sig = 1;
+	value = 0;
+	nbase = ft_base_check_and_strlen(base);
+	if (nbase <= 1)
+		return (0);
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+			|| str[i] == '\r' || str[i] == '\v' || str[i] == '\f')
+		i++;
+	if (str[i] == '+' || str[i] == '-')
+		sig *= (str[i++] == '-' ? -1 : 1);
+	while (ft_is_in_base(base, str[i]) != -1)
+	{
+		value = value * nbase + ft_is_in_base(base, str[i]);
+		i++;
+	}
+	if (!str[i] || str[i] == '-' || str[i] == '+')
+		return (sig * value);
+	else
+		return (0);
 }

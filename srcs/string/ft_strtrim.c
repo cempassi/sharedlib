@@ -3,9 +3,9 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ffoissey <ffoissey@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cempassi <cempassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 15:10:39 by ffoissey          #+#    #+#             */
+/*   Created: 2018/11/08 15:10:39 by cempassi          #+#    #+#             */
 /*   Updated: 2019/06/30 08:11:19 by cempassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -45,7 +45,7 @@ static char			*ft_sub(char const *s, unsigned int start, size_t len)
 {
 	char			*sub;
 
-	if (!(sub = (char *)malloc(len + 1)))
+	if (!(sub = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	sub = ft_ncpy(sub, s + start, len);
 	sub[len] = '\0';

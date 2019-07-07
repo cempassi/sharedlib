@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/02/17 23:46:04 by ffoissey          #+#    #+#              #
+#    Created: 2019/02/17 23:46:04 by cempassi          #+#    #+#              #
 #    Updated: 2019/07/04 19:37:58 by cempassi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = clang
 COMPILE = $(CC) -c
-DEBUG = $(CC) -g3 -c
+DEBUG = $(CC) -g3 -c -fsanitize=address,undefined
 
 # Reset
 NC = \033[0m

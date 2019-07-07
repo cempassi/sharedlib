@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vct_del.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skuppers <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nrechati <nrechati@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/18 11:18:43 by skuppers          #+#    #+#             */
-/*   Updated: 2019/07/04 12:08:29 by skuppers         ###   ########.fr       */
+/*   Created: 2019/05/18 11:18:43 by nrechati          #+#    #+#             */
+/*   Updated: 2019/07/04 12:08:29 by nrechati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 void		vct_del(t_vector **vector)
 {
-	if (vector == NULL)
+	if (vector == NULL || *vector == NULL)
 		return ;
 	ft_strdel(&(*vector)->buffer);
 	free(*vector);

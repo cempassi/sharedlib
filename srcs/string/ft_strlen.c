@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ffoissey <ffoissey@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cempassi <cempassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/12 12:37:47 by ffoissey          #+#    #+#             */
-/*   Updated: 2019/07/04 13:38:44 by skuppers         ###   ########.fr       */
+/*   Created: 2018/10/12 12:37:47 by cempassi          #+#    #+#             */
+/*   Updated: 2019/07/04 13:38:44 by nrechati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ static uint64_t	locate_eol(t_magic *magic, const unsigned long int *lw_ptr
 	int64_t		length;
 	const char	*cp;
 
-	length = 0;
 	cp = NULL;
 	while (1)
 	{
