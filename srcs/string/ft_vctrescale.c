@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_vctrescale.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nrechati <nrechati@42.fr>                    +#+  +:+       +#+        */
+/*   By: ffoissey <ffoisssey@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/08 10:39:36 by nrechati          #+#    #+#             */
-/*   Updated: 2019/04/12 09:37:38 by nrechati         ###   ########.fr       */
+/*   Created: 2019/07/09 10:36:56 by ffoissey          #+#    #+#             */
+/*   Updated: 2019/07/09 10:37:02 by ffoissey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int		ft_vctrescale(t_vector *vector)
 {
